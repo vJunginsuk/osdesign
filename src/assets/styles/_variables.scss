@@ -1,0 +1,59 @@
+// gray
+$white: #fff;
+$gray-100: #f5f5f5;
+$gray-200: #eeeeee;
+$gray-300: #e0e0e0;
+$gray-400: #d9d9d9;
+$gray-500: #cccccc;
+$gray-600: #b9b9b9;
+$gray-700: #999999;
+$gray-800: #666666;
+$gray-900: #3d3d3d;
+$black: #000;
+
+// point
+$primary: #1975e6;
+$primary-light: #55a1fe;
+$primary-dark: #005ac7;
+
+// font color default
+$font-color: $gray-900;
+
+//#region button
+// ### outline
+$btn-outline-bg: $white;
+$btn-outline-border: $gray-400;
+$btn-outline-border-hover: $primary-light;
+$btn-outline-border-active: $primary-dark;
+$btn-outline-font: $gray-700;
+$btn-outline-font-hover: $primary-light;
+
+// ### primary
+$btn-primary-bg: $primary;
+$btn-primary-border: $primary;
+$btn-primary-font: $white;
+$btn-primary-bg-hover: $primary-light;
+$btn-primary-font-hover: $white;
+$btn-primary-bg-active: $primary-dark;
+// ### text
+$btn-text-bg: transparent;
+$btn-text-border: transparent;
+$btn-text-font: $gray-900;
+$btn-text-font-hover: $primary;
+$btn-text-border-hover: transparent;
+$btn-text-bg-hover: $gray-100;
+$btn-text-font-hover: $primary;
+$btn-text-font-active: $primary-dark;
+//#endregion button
+
+/* ###########
+ * font size(font 12px 기준)
+############## */
+
+$font-size: 1rem; // 12px
+$font-size-h6: 1rem; // 12px
+$font-size-h5: 1.25rem; // 15px
+$font-size-h4: 1.5rem; // 18px
+$font-size-h3: 1.75rem; // 21px
+$font-size-h2: 2rem; // 24px
+$font-size-h1: 2.5rem; // 30px

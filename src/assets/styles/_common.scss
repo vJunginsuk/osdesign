@@ -1,0 +1,39 @@
+html {
+  box-sizing: border-box;
+  font-size: 12px;
+}
+div {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+label,
+div,
+li,
+dt,
+dd,
+span,
+b,
+strong,
+input {
+  color: var.$font-color;
+}
+ul,
+li,
+p,
+button,
+input,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
