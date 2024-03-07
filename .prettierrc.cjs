@@ -10,7 +10,7 @@ module.exports ={
   // 가능하면 후행 쉼표 사용
   "trailingComma": "all",
   // 줄 바꿈할 길이
-  "printWidth": 80,
+  "printWidth": 120,
   // 객체 괄호에 공백 삽입
   "bracketSpacing": true,
   // 항상 화살표 함수의 매개 변수를 괄호로 감쌈

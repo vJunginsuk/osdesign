@@ -1,11 +1,11 @@
-import React from "react";
-import classNames from "classnames";
+import React from 'react';
+import classNames from 'classnames';
 
-type btnType = "outline" | "primary" | "text";
+type btnType = 'outline' | 'primary' | 'text';
 
 export interface ButtonProps {
   onClick?: () => void;
-  children?: string;
+  children?: React.ReactNode;
   type?: btnType;
   disabled: boolean;
 }
@@ -13,12 +13,12 @@ export interface ButtonProps {
 const Button = (props: ButtonProps) => {
   const { onClick, children, type, disabled } = props;
   const classes = classNames(
-    "os-btn",
+    'os-btn',
     classNames,
     {
       [`os-btn-${type}`]: type,
     },
-    disabled && "os-btn-disabled"
+    disabled && 'os-btn-disabled',
   );
   return (
     <button className={classes} onClick={onClick} disabled={disabled}>

@@ -1,6 +1,7 @@
-@use "variables" as var;
-@use "mixin" as mix;
+@use 'variables' as var;
+@use 'mixin' as mix;
 
-@import "common";
+@import 'common';
 
-@import "../../components//Button/style";
+@import '../../components//Button/style';
+@import '../../components//Flex/style';
