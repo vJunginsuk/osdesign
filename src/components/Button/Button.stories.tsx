@@ -6,18 +6,29 @@ import Button, { ButtonProps } from './Button';
 export default {
   component: Button,
   title: 'Button',
-  argTypes: { onClick: { action: 'onClick' } },
+  tags: ['autodocs'],
+  argTypes: {
+    onClick: { action: 'onClick' },
+    label: {
+      defaultValue: 'Button',
+    },
+  },
+
+  // 문서 description
   parameters: {
-    componentSubtitle: 'Displays an image that represents a user or organization',
+    componentSubtitle: '버튼 타입을 지정합니다.',
   },
 } as Meta;
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Outline = Template.bind({});
-Outline.args = { type: 'outline', children: 'button', disabled: false };
+Outline.args = { type: 'outline', label: 'button', disabled: false };
 
 export const Primary = Template.bind({});
-Primary.args = { type: 'primary', children: 'button', disabled: false };
+Primary.args = { type: 'primary', label: 'button', disabled: false };
 
 export const Text = Template.bind({});
-Text.args = { type: 'text', children: 'button', disabled: false };
+Text.args = { type: 'text', label: 'button', disabled: false };
+
+export const Size = Template.bind({});
+Size.args = { size: 'medium', label: 'click' };
