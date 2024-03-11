@@ -5,8 +5,13 @@
   background-color: var.$btn-outline-bg;
   color: var.$btn-outline-font;
   font-size: 12px;
-  padding: 4px 12px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  height: 22px;
   border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   @include mix.fade-in;
 
@@ -20,17 +25,18 @@
   // os-btn-small
   &-small {
     font-size: 12px;
-    padding: 4px 12px;
+    height: 22px;
   }
   // os-btn-medium
   &-medium {
     font-size: 14px;
-    padding: 4px 12px;
+    height: 24px;
   }
   // os-btn-large
   &-large {
     font-size: 16px;
     padding: 4px 16px;
+    height: 28px;
   }
 }
 

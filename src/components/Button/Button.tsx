@@ -25,7 +25,7 @@ const Button = (props: ButtonProps) => {
   );
   return (
     <button className={classes} onClick={onClick} disabled={disabled}>
-      {label}
+      <span style={{ display: 'none' }}>12</span> {label}
     </button>
   );
 };

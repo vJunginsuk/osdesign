@@ -1,58 +1,150 @@
-import React from 'react';
-import { Meta, Story } from '@storybook/react';
-import Flex, { flexProps } from './Flex';
+import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+import Flex from './Flex';
+import { useState } from 'react';
+import Button from '../Button/Button';
+
+const meta: Meta<typeof Flex> = {
   component: Flex,
-  title: 'Flex',
+  // Documentation 문서 생성
   tags: ['autodocs'],
   argTypes: {
     align: {
-      options: ['start', 'center', 'end'],
-      control: { type: 'radio' },
-      description: '수직 정렬',
+      description: `"start" , "center" , "end" `,
     },
     justify: {
-      options: ['start', 'center', 'end', 'between', 'around', 'evenly'],
-      control: { type: 'radio' },
-      description: '수평 정렬',
+      description: `"start" , "center" , "end" , "between" , "around" , "evenly"`,
     },
   },
-
-  // 문서 description
-  parameters: {
-    componentSubtitle: '요소 사이의 간격을 설정하는 데 적합합니다.\n다양한 수평 및 수직 정렬을 설정하는 데 적합합니다.',
-  },
-} as Meta;
-
-const Template: Story<flexProps> = (args) => <Flex {...args} />;
-
-export const Default = Template.bind({});
-Default.args = {
-  children: (
-    <>
-      {Array.from(Array(10), (_, i) => (
-        <button key={i}>Button</button>
-      ))}
-    </>
-  ),
-  gap: '8px',
-  vertical: false,
-  wrap: false,
-  className: '',
-  align: 'start',
-  justify: 'start',
-  style: '',
 };
 
-export const Align = Template.bind({});
-Align.args = {
-  children: (
-    <>
-      <button>click</button>
-      <button>click</button>
-    </>
-  ),
+export default meta;
+type Story = StoryObj<typeof Flex>;
 
-  align: 'center',
+export const Vertical: Story = {
+  render: () => {
+    const [vertical, setVertical] = useState<boolean>(false);
+    const onChange = () => {
+      setVertical(!vertical);
+    };
+
+    // vertical true 일 때 column
+    return (
+      <div>
+        <Flex vertical={vertical} gap="8px">
+          <Button label="button" />
+          <Button label="button" />
+          <Button label="button" />
+          <Button label="button" />
+          <Button label="button" />
+          <Button label="button" />
+        </Flex>
+        <div>
+          <Flex gap="20px" align="center" className="story-box">
+            <Flex gap="4px">
+              <input type="checkbox" id="type2" name="typeGroup" value="vertical" onChange={onChange} />
+              <label htmlFor="type2">vertical</label>
+            </Flex>
+          </Flex>
+        </div>
+      </div>
+    );
+  },
+};
+
+export const Aligncontent: Story = {
+  render: () => {
+    const [align, setAlign] = useState();
+    const onChange = (e: any) => {
+      setAlign(e.target.value);
+    };
+    // align value :  start, center, end
+    return (
+      <div>
+        <Flex align={align} gap="8px" style={{ height: '200px' }}>
+          <Button label="button" />
+          <Button label="button" />
+          <Button label="button" />
+          <Button label="button" />
+          <Button label="button" />
+          <Button label="button" />
+        </Flex>
+        <Flex gap="20px" align="center" className="story-box">
+          <Flex gap="4px">
+            <input
+              type="radio"
+              id="type1"
+              name="alignGroup"
+              defaultChecked
+              value="start"
+              onChange={onChange}
+              defaultValue="outline"
+            />
+            <label htmlFor="type1">start</label>
+          </Flex>
+          <Flex gap="4px">
+            <input type="radio" id="type2" name="alignGroup" value="center" onChange={onChange} />
+            <label htmlFor="type2">center</label>
+          </Flex>
+          <Flex gap="4px">
+            <input type="radio" id="type3" name="alignGroup" value="end" onChange={onChange} />
+            <label htmlFor="type3">end</label>
+          </Flex>
+        </Flex>
+      </div>
+    );
+  },
+};
+export const Justifycontent: Story = {
+  render: () => {
+    const [justify, setJustify] = useState();
+    const onChange = (e: any) => {
+      setJustify(e.target.value);
+    };
+    // justify value : start, center, end, between, around, evenly
+    return (
+      <div>
+        <Flex justify={justify} gap="8px">
+          <Button label="button" />
+          <Button label="button" />
+          <Button label="button" />
+          <Button label="button" />
+        </Flex>
+        <Flex gap="20px" align="center" className="story-box">
+          <Flex gap="4px">
+            <input
+              type="radio"
+              id="type1"
+              name="justifyGroup"
+              defaultChecked
+              value="start"
+              onChange={onChange}
+              defaultValue="outline"
+            />
+            <label htmlFor="type1">start</label>
+          </Flex>
+          <Flex gap="4px">
+            <input type="radio" id="type2" name="justifyGroup" value="center" onChange={onChange} />
+            <label htmlFor="type2">center</label>
+          </Flex>
+          <Flex gap="4px">
+            <input type="radio" id="type3" name="justifyGroup" value="end" onChange={onChange} />
+            <label htmlFor="type3">end</label>
+          </Flex>
+          <Flex gap="4px">
+            <input type="radio" id="type3" name="justifyGroup" value="between" onChange={onChange} />
+            <label htmlFor="type3">between</label>
+          </Flex>
+          <Flex gap="4px">
+            <input type="radio" id="type3" name="justifyGroup" value="around" onChange={onChange} />
+            <label htmlFor="type3">around</label>
+          </Flex>
+          <Flex gap="4px">
+            <input type="radio" id="type3" name="justifyGroup" value="evenly" onChange={onChange} />
+            <label htmlFor="type3">evenly</label>
+          </Flex>
+        </Flex>
+      </div>
+    );
+  },
 };

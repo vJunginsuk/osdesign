@@ -1,19 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-
-type alignType = 'start' | 'center' | 'end';
-type justifyType = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
-
-export interface flexProps {
-  children?: React.ReactNode;
-  gap?: string | number | (string & {});
-  vertical?: boolean;
-  wrap?: boolean;
-  className?: string;
-  align?: alignType;
-  justify?: justifyType;
-  style?: any;
-}
+import { flexProps } from '../../interfaces/layouts';
 
 const index = (props: flexProps) => {
   const { children, style, vertical, wrap, className, align, justify, gap } = props;
