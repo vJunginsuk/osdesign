@@ -1,4 +1,4 @@
-export type alignType = 'start' | 'center' | 'end' | undefined;
+export type alignType = 'start' | 'center' | 'end';
 export type justifyType = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
 
 export interface flexProps {
@@ -7,7 +7,7 @@ export interface flexProps {
   vertical?: boolean;
   wrap?: boolean;
   className?: string;
-  align?: alignType;
-  justify?: justifyType;
+  align?: alignType | string;
+  justify?: justifyType | string;
   style?: any;
 }

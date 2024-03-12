@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Flex from './Flex';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Button from '../Button/Button';
 
 const meta: Meta<typeof Flex> = {
@@ -42,7 +42,7 @@ export const Vertical: Story = {
         <div>
           <Flex gap="20px" align="center" className="story-box">
             <Flex gap="4px">
-              <input type="checkbox" id="type2" name="typeGroup" value="vertical" onChange={onChange} />
+              <input type="checkbox" id="type2" value="vertical" onChange={onChange} />
               <label htmlFor="type2">vertical</label>
             </Flex>
           </Flex>
@@ -54,8 +54,8 @@ export const Vertical: Story = {
 
 export const Aligncontent: Story = {
   render: () => {
-    const [align, setAlign] = useState();
-    const onChange = (e: any) => {
+    const [align, setAlign] = useState('');
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setAlign(e.target.value);
     };
     // align value :  start, center, end
@@ -71,15 +71,7 @@ export const Aligncontent: Story = {
         </Flex>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
-            <input
-              type="radio"
-              id="type1"
-              name="alignGroup"
-              defaultChecked
-              value="start"
-              onChange={onChange}
-              defaultValue="outline"
-            />
+            <input type="radio" id="type1" name="alignGroup" defaultChecked value="start" onChange={onChange} />
             <label htmlFor="type1">start</label>
           </Flex>
           <Flex gap="4px">
@@ -97,8 +89,8 @@ export const Aligncontent: Story = {
 };
 export const Justifycontent: Story = {
   render: () => {
-    const [justify, setJustify] = useState();
-    const onChange = (e: any) => {
+    const [justify, setJustify] = useState('start');
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setJustify(e.target.value);
     };
     // justify value : start, center, end, between, around, evenly
@@ -112,15 +104,7 @@ export const Justifycontent: Story = {
         </Flex>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
-            <input
-              type="radio"
-              id="type1"
-              name="justifyGroup"
-              defaultChecked
-              value="start"
-              onChange={onChange}
-              defaultValue="outline"
-            />
+            <input type="radio" id="type1" name="justifyGroup" defaultChecked value="start" onChange={onChange} />
             <label htmlFor="type1">start</label>
           </Flex>
           <Flex gap="4px">

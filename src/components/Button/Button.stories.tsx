@@ -15,8 +15,8 @@ type Story = StoryObj<typeof Button>;
 
 export const Type: Story = {
   render: () => {
-    const [value, setValue] = useState();
-    const onChange = (e: any) => {
+    const [value, setValue] = useState('outline');
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setValue(e.target.value);
     };
     // type value : outline, primary, text
@@ -27,15 +27,7 @@ export const Type: Story = {
         </div>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
-            <input
-              type="radio"
-              id="type1"
-              name="typeGroup"
-              defaultChecked
-              value="outline"
-              onChange={onChange}
-              defaultValue="outline"
-            />
+            <input type="radio" id="type1" name="typeGroup" defaultChecked value="outline" onChange={onChange} />
             <label htmlFor="type1">outline</label>
           </Flex>
           <Flex gap="4px">
@@ -54,8 +46,8 @@ export const Type: Story = {
 
 export const Size: Story = {
   render: () => {
-    const [size, setSize] = useState();
-    const onChange = (e: any) => {
+    const [size, setSize] = useState('small');
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       setSize(e.target.value);
     };
 
@@ -67,24 +59,46 @@ export const Size: Story = {
         </div>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
-            <input
-              type="radio"
-              id="type1"
-              name="sizeGroup"
-              defaultChecked
-              value="small"
-              onChange={onChange}
-              defaultValue="outline"
-            />
-            <label htmlFor="type1">small</label>
+            <input type="radio" id="size1" name="sizeGroup" defaultChecked value="small" onChange={onChange} />
+            <label htmlFor="size1">small</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type2" name="sizeGroup" value="medium" onChange={onChange} />
-            <label htmlFor="type2">medium</label>
+            <input type="radio" id="size2" name="sizeGroup" value="medium" onChange={onChange} />
+            <label htmlFor="size2">medium</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type3" name="sizeGroup" value="large" onChange={onChange} />
-            <label htmlFor="type3">large</label>
+            <input type="radio" id="size3" name="sizeGroup" value="large" onChange={onChange} />
+            <label htmlFor="size3">large</label>
+          </Flex>
+        </Flex>
+      </div>
+    );
+  },
+};
+
+export const Danger: Story = {
+  render: () => {
+    const [value2, setValue2] = useState('outline');
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setValue2(e.target.value);
+    };
+    return (
+      <div>
+        <div>
+          <Button type={value2} size="small" label="Click" danger />
+        </div>
+        <Flex gap="20px" align="center" className="story-box">
+          <Flex gap="4px">
+            <input type="radio" id="Danger1" name="typeGroup2" defaultChecked value="outline" onChange={onChange} />
+            <label htmlFor="Danger1">outline</label>
+          </Flex>
+          <Flex gap="4px">
+            <input type="radio" id="Danger2" name="typeGroup2" value="primary" onChange={onChange} />
+            <label htmlFor="Danger2">primary</label>
+          </Flex>
+          <Flex gap="4px">
+            <input type="radio" id="Danger3" name="typeGroup2" value="text" onChange={onChange} />
+            <label htmlFor="Danger3">text</label>
           </Flex>
         </Flex>
       </div>

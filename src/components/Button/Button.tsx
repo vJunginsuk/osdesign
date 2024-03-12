@@ -1,19 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-
-type btnType = 'outline' | 'primary' | 'text';
-type btnSize = 'small' | 'medium' | 'large';
-
-export interface ButtonProps {
-  onClick?: () => void;
-  label?: string | React.ReactNode;
-  type?: btnType;
-  disabled?: boolean;
-  size?: btnSize;
-}
+import { ButtonProps } from '../../interfaces/controls';
 
 const Button = (props: ButtonProps) => {
-  const { onClick, label, type, disabled, size } = props;
+  const { onClick, label, type, disabled, size, danger } = props;
   const classes = classNames(
     'os-btn',
     classNames,
@@ -21,7 +11,8 @@ const Button = (props: ButtonProps) => {
       [`os-btn-${type}`]: type,
       [`os-btn-${size}`]: size,
     },
-    disabled && 'os-btn-disabled',
+    disabled && `os-btn-${type}-disabled`,
+    danger && `os-btn-${type}-danger`,
   );
   return (
     <button className={classes} onClick={onClick} disabled={disabled}>

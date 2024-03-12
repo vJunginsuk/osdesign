@@ -12,38 +12,64 @@ $gray-900: #3d3d3d;
 $black: #000;
 
 // point
-$primary: #1975e6;
-$primary-light: #55a1fe;
-$primary-dark: #005ac7;
+$primary: #0291f9;
+$primary-light: lighten($primary, 10%);
+$primary-dark: darken($primary, 8%);
+
+$secondary: #69b805;
+// color
+$red: #c54646;
+$orange: #ed991c;
+
+// ###############################################################################################
 
 // font color default
 $font-color: $gray-900;
 
 //#region button
 // ### outline
-$btn-outline-bg: $white;
-$btn-outline-border: $gray-400;
-$btn-outline-border-hover: $primary-light;
-$btn-outline-border-active: $primary-dark;
-$btn-outline-font: $gray-700;
-$btn-outline-font-hover: $primary-light;
+$btn-outline-bg: transparent;
+$btn-outline-bg__disabled: $gray-200;
+$btn-outline-border: $gray-500;
+$btn-outline-border__hover: $primary;
+$btn-outline-border__active: $primary-dark;
+$btn-outline-border__disabled: $gray-300;
+$btn-outline-font: $gray-900;
+$btn-outline-font__hover: $primary;
+$btn-outline-font__active: $primary-dark;
+$btn-outline-font__disabled: $gray-500;
 
 // ### primary
 $btn-primary-bg: $primary;
-$btn-primary-border: $primary;
+$btn-primary-bg__hover: $primary-light;
+$btn-primary-bg__active: $primary-dark;
+$btn-primary-bg__disabled: $gray-400;
+$btn-primary-border: transparent;
 $btn-primary-font: $white;
-$btn-primary-bg-hover: $primary-light;
-$btn-primary-font-hover: $white;
-$btn-primary-bg-active: $primary-dark;
+$btn-primary-font__disabled: $gray-200;
+
 // ### text
 $btn-text-bg: transparent;
+$btn-text-bg__hover: $gray-100;
+$btn-text-bg__disabled: $gray-200;
 $btn-text-border: transparent;
 $btn-text-font: $gray-900;
-$btn-text-font-hover: $primary;
-$btn-text-border-hover: transparent;
-$btn-text-bg-hover: $gray-100;
-$btn-text-font-hover: $primary;
-$btn-text-font-active: $primary-dark;
+$btn-text-font__hover: $primary;
+$btn-text-font__active: $primary-dark;
+$btn-text-font__disabled: $gray-500;
+
+// ### delete
+$btn-outline-bg__danger: lighten($red, 45%);
+$btn-outline-bg__danger-hover: lighten($red, 40%);
+$btn-outline-border__danger: $red;
+$btn-outline-font__danger: $red;
+
+$btn-primary-bg__danger: $red;
+$btn-primary-bg__danger-hover: darken($red, 8%);
+
+$btn-text-font__danger: $red;
+$btn-text-bg__danger-hover: lighten($red, 45%);
+
 //#endregion button
 
 /* ###########
