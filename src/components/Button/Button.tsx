@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
-import { ButtonProps } from '../../interfaces/controls';
+import { buttonProps } from '../../interfaces/controls';
 
-const Button = (props: ButtonProps) => {
-  const { onClick, label, type, disabled, size, danger } = props;
+const Button = (props: buttonProps) => {
+  const { onClick, label, type, disabled, size, danger, icon, style } = props;
   const classes = classNames(
     'os-btn',
     classNames,
@@ -14,14 +14,15 @@ const Button = (props: ButtonProps) => {
     disabled && `os-btn-${type}-disabled`,
     danger && `os-btn-${type}-danger`,
   );
+  const styles = {
+    padding: icon && '0 12px 0 8px',
+    ...style,
+  };
   return (
-    <button className={classes} onClick={onClick} disabled={disabled}>
-      <span style={{ display: 'none' }}>12</span> {label}
+    <button className={classes} onClick={onClick} disabled={disabled} style={styles}>
+      {icon && <span className="os-btn-svg">{icon}</span>} {label}
     </button>
   );
 };
-/**
-- Use an avatar for attributing actions or content to specific users.
-- The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
-**/
+
 export default Button;

@@ -9,5 +9,5 @@ export interface flexProps {
   className?: string;
   align?: alignType | string;
   justify?: justifyType | string;
-  style?: any;
+  style?: React.CSSProperties;
 }

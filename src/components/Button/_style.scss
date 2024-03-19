@@ -1,3 +1,4 @@
+//#region basic
 .os-btn {
   border-width: 1px;
   border-style: solid;
@@ -19,31 +20,67 @@
     &:not(.os-btn-outline-disabled, .os-btn-outline-danger, .os-btn-primary, .os-btn-text) {
       border-color: var.$btn-outline-border__hover;
       color: var.$btn-outline-font__hover;
+      > .os-btn-svg {
+        > .os-icon-path {
+          @include mix.fade-in;
+          stroke: var.$btn-outline-font__hover;
+        }
+      }
     }
   }
   &:not(.os-btn-outline-disabled, .os-btn-outline-danger, .os-btn-primary, .os-btn-text) {
     &:active {
       border-color: var.$btn-outline-border__active;
       color: var.$btn-outline-font__active;
+      > .os-btn-svg {
+        > .os-icon-path {
+          stroke: var.$btn-outline-font__active;
+        }
+      }
     }
   }
   // os-btn-small
   &-small {
     font-size: 12px;
     height: 22px;
+    > .os-btn-svg {
+      > .os-icon-svg {
+        width: 10px;
+      }
+    }
   }
   // os-btn-medium
   &-medium {
     font-size: 14px;
     height: 24px;
+    > .os-btn-svg {
+      > .os-icon-svg {
+        width: 14px;
+      }
+    }
   }
   // os-btn-large
   &-large {
     font-size: 16px;
     padding: 4px 16px;
     height: 28px;
+    > .os-btn-svg {
+      > .os-icon-svg {
+        width: 16px;
+      }
+    }
+  }
+  // os-btn-icon
+  &-svg {
+    margin-right: 2px;
+    display: flex;
+    align-items: start;
+    margin-top: -1px;
   }
 }
+//#endregion basic
+
+//#region outline
 .os-btn-outline {
   // os-btn-outline-disabled
   &-disabled {
@@ -51,6 +88,11 @@
     border-color: var.$btn-outline-border__disabled !important;
     color: var.$btn-outline-font__disabled !important;
     cursor: not-allowed;
+    > .os-btn-svg {
+      > .os-icon-path {
+        stroke: var.$btn-outline-font__disabled !important;
+      }
+    }
   }
   // os-btn-outline-danger
   &-danger {
@@ -61,13 +103,24 @@
       background-color: var.$btn-outline-bg__danger-hover;
     }
   }
+  > .os-btn-svg {
+    > .os-icon-path {
+      stroke: var.$btn-outline-font;
+    }
+  }
 }
+//#endregion outline
 
+//#region primary
 .os-btn-primary {
   background-color: var.$btn-primary-bg;
   border-color: var.$btn-primary-border;
   color: var.$btn-primary-font;
-
+  > .os-btn-svg {
+    > .os-icon-path {
+      stroke: var.$btn-primary-font;
+    }
+  }
   &:hover {
     &:not(.os-btn-primary-disabled, .os-btn-primary-danger) {
       background-color: var.$btn-primary-bg__hover;
@@ -83,6 +136,11 @@
     background-color: var.$btn-primary-bg__disabled !important;
     color: var.$btn-primary-font__disabled !important;
     cursor: not-allowed;
+    > .os-btn-svg {
+      > .os-icon-path {
+        stroke: var.$btn-primary-font__disabled;
+      }
+    }
   }
   // os-btn-primary-danger
   &-danger {
@@ -92,21 +150,37 @@
     }
   }
 }
+//#endregion primary
 
+//#region text
 .os-btn-text {
   background-color: var.$btn-text-bg;
   border-color: var.$btn-text-border;
   color: var.$btn-text-font;
-
+  > .os-btn-svg {
+    > .os-icon-path {
+      stroke: var.$btn-text-font;
+    }
+  }
   &:hover {
     &:not(.os-btn-text-disabled, .os-btn-text-danger) {
       color: var.$btn-text-font__hover;
       background-color: var.$btn-text-bg__hover;
+      > .os-btn-svg {
+        > .os-icon-path {
+          stroke: var.$btn-text-font__hover;
+        }
+      }
     }
   }
   &:active {
     &:not(.os-btn-text-disabled, .os-btn-text-danger) {
       color: var.$btn-text-font__active;
+      > .os-btn-svg {
+        > .os-icon-path {
+          stroke: var.$btn-text-font__active;
+        }
+      }
     }
   }
   // os-btn-text-disabled
@@ -115,6 +189,11 @@
     border-color: transparent !important;
     color: var.$btn-text-font__disabled !important;
     cursor: not-allowed;
+    > .os-btn-svg {
+      > .os-icon-path {
+        stroke: var.$btn-text-font__disabled !important;
+      }
+    }
   }
   // os-btn-text-danger
   &-danger {
@@ -124,3 +203,26 @@
     }
   }
 }
+//#endregion text
+
+//#region icon
+.os-btn-icon {
+  font-size: 0px;
+  padding: 0 5px !important;
+  border-width: 0;
+  > .os-btn-svg {
+    margin-right: 0px;
+    > .os-icon-path {
+      stroke: var.$btn-text-font;
+    }
+  }
+  &-disabled {
+    cursor: not-allowed;
+    > .os-btn-svg {
+      > .os-icon-path {
+        stroke: var.$btn-text-font__disabled !important;
+      }
+    }
+  }
+}
+//#endregion icon

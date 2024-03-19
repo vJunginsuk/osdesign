@@ -3,6 +3,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
 import { useState } from 'react';
 import Flex from '../Flex/Flex';
+import MinusOutline from '../../icons/MinusOutline/MinusOutline';
+import PlusOutline from '../../icons/PlusOutline/PlusOutline';
+import EditOutline from '../../icons/EditOutline/EditOutline';
+import CloseOutline from '../../icons/CloseOutline/CloseOutline';
 
 const meta: Meta<typeof Button> = {
   component: Button,
@@ -23,7 +27,11 @@ export const Type: Story = {
     return (
       <div>
         <div>
-          <Button type={value} label="Click" size="small" />
+          {value !== 'icon' ? (
+            <Button type={value} label="Click" size="small" />
+          ) : (
+            <Button type={value} icon={<CloseOutline />} />
+          )}
         </div>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
@@ -37,6 +45,10 @@ export const Type: Story = {
           <Flex gap="4px">
             <input type="radio" id="type3" name="typeGroup" value="text" onChange={onChange} />
             <label htmlFor="type3">text</label>
+          </Flex>
+          <Flex gap="4px">
+            <input type="radio" id="type3" name="typeGroup" value="icon" onChange={onChange} />
+            <label htmlFor="type3">icon</label>
           </Flex>
         </Flex>
       </div>
@@ -55,7 +67,7 @@ export const Size: Story = {
     return (
       <div>
         <div>
-          <Button size={size} label="Click" type="outline" />
+          <Button size={size} label="Click" type="outline" icon={<MinusOutline />} />
         </div>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
@@ -100,6 +112,19 @@ export const Danger: Story = {
             <input type="radio" id="Danger3" name="typeGroup2" value="text" onChange={onChange} />
             <label htmlFor="Danger3">text</label>
           </Flex>
+        </Flex>
+      </div>
+    );
+  },
+};
+export const Icon: Story = {
+  render: () => {
+    return (
+      <div>
+        <Flex gap="12px">
+          <Button type="outline" size="small" label="Delete" icon={<MinusOutline />} disabled />
+          <Button type="primary" size="small" label="ADD" icon={<PlusOutline />} disabled />
+          <Button type="text" size="small" label="Edit" icon={<EditOutline />} disabled />
         </Flex>
       </div>
     );

@@ -11,12 +11,6 @@ const config: StorybookConfig = {
     '@storybook/addon-docs',
     '@storybook/addon-a11y',
     '@storybook/addon-controls',
-    {
-      name: '@storybook/addon-docs',
-      options: {
-        configureJSX: true,
-      },
-    },
   ],
   framework: {
     name: '@storybook/react-webpack5',
@@ -28,8 +22,8 @@ const config: StorybookConfig = {
   },
   docs: {
     //👇 See the table below for the list of supported options
-    autodocs: 'tag',
-    defaultName: 'Documentation',
+    autodocs: true,
+    defaultName: 'Docs',
   },
   staticDirs: ['..\\public'],
 };
