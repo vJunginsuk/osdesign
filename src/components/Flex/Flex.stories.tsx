@@ -1,21 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
-import Flex from './Flex';
 import React, { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+import Flex from './Flex';
 import Button from '../Button/Button';
 
 const meta: Meta<typeof Flex> = {
   component: Flex,
   // Documentation 문서 생성
   tags: ['autodocs'],
-  argTypes: {
-    align: {
-      description: `"start" , "center" , "end" `,
-    },
-    justify: {
-      description: `"start" , "center" , "end" , "between" , "around" , "evenly"`,
-    },
-  },
+  // argTypes: {
+  //   align: {
+  //     description: `"start" , "center" , "end" `,
+  //   },
+  //   justify: {
+  //     description: `"start" , "center" , "end" , "between" , "around" , "evenly"`,
+  //   },
+  // },
 };
 
 export default meta;
@@ -32,12 +31,13 @@ export const Vertical: Story = {
     return (
       <div>
         <Flex vertical={vertical} gap="8px">
-          <Button label="button" />
-          <Button label="button" />
-          <Button label="button" />
-          <Button label="button" />
-          <Button label="button" />
-          <Button label="button" />
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
         </Flex>
         <div>
           <Flex gap="20px" align="center" className="story-box">
@@ -62,12 +62,13 @@ export const Aligncontent: Story = {
     return (
       <div>
         <Flex align={align} gap="8px" style={{ height: '200px' }}>
-          <Button label="button" />
-          <Button label="button" />
-          <Button label="button" />
-          <Button label="button" />
-          <Button label="button" />
-          <Button label="button" />
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
         </Flex>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
@@ -97,10 +98,10 @@ export const Justifycontent: Story = {
     return (
       <div>
         <Flex justify={justify} gap="8px">
-          <Button label="button" />
-          <Button label="button" />
-          <Button label="button" />
-          <Button label="button" />
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
+          <Button>button</Button>
         </Flex>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">

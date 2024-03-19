@@ -3,7 +3,7 @@ export type justifyType = 'start' | 'center' | 'end' | 'between' | 'around' | 'e
 
 export interface flexProps {
   children?: React.ReactNode;
-  gap?: string | number | (string & {});
+  gap?: string & {};
   vertical?: boolean;
   wrap?: boolean;
   className?: string;

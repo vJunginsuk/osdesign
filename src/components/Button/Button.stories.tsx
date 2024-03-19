@@ -1,8 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
-import Button from './Button';
 import { useState } from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Flex from '../Flex/Flex';
+import Button from './Button';
 import MinusOutline from '../../icons/MinusOutline/MinusOutline';
 import PlusOutline from '../../icons/PlusOutline/PlusOutline';
 import EditOutline from '../../icons/EditOutline/EditOutline';
@@ -28,7 +27,9 @@ export const Type: Story = {
       <div>
         <div>
           {value !== 'icon' ? (
-            <Button type={value} label="Click" size="small" />
+            <Button type={value} size="small">
+              Click
+            </Button>
           ) : (
             <Button type={value} icon={<CloseOutline />} />
           )}
@@ -67,7 +68,9 @@ export const Size: Story = {
     return (
       <div>
         <div>
-          <Button size={size} label="Click" type="outline" icon={<MinusOutline />} />
+          <Button size={size} type="outline" icon={<MinusOutline />}>
+            click!!
+          </Button>
         </div>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
@@ -97,7 +100,9 @@ export const Danger: Story = {
     return (
       <div>
         <div>
-          <Button type={value2} size="small" label="Click" danger />
+          <Button type={value2} size="small" danger>
+            click
+          </Button>
         </div>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
@@ -122,9 +127,15 @@ export const Icon: Story = {
     return (
       <div>
         <Flex gap="12px">
-          <Button type="outline" size="small" label="Delete" icon={<MinusOutline />} disabled />
-          <Button type="primary" size="small" label="ADD" icon={<PlusOutline />} disabled />
-          <Button type="text" size="small" label="Edit" icon={<EditOutline />} disabled />
+          <Button type="outline" size="small" icon={<MinusOutline />}>
+            Delete
+          </Button>
+          <Button type="primary" size="small" icon={<PlusOutline />}>
+            ADD
+          </Button>
+          <Button type="text" size="small" icon={<EditOutline />}>
+            EDIT
+          </Button>
         </Flex>
       </div>
     );

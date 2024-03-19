@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Flex from '../components/Flex/Flex';
 import '../assets/styles/index.scss';
 import Button from '../components/Button/Button';
+import CloseOutline from '../icons/CloseOutline/CloseOutline';
+import Modal from '../feedback/Modal/Modal';
 
 const Common = () => {
   console.log();
+  const [modalOpen, setModalOpen] = useState(false);
+  const onClickModalOpen = () => {
+    setModalOpen(true);
+  };
 
   return (
-    <Flex vertical align="center" justify="between" style={{ marginTop: '20px' }}>
-      <Button type="primary" label="확인" size="medium" />
-      <Button type="primary" label="확인" />
-      <Button type="primary" label="확인" />
-      <Button type="primary" label="확인" />
-      <Button type="primary" label="확인" />
+    <Flex align="center" justify="between" style={{ marginTop: '20px' }}>
+      <Button type="primary" size="medium" onClick={onClickModalOpen} />
+      <Button type="outline">확인</Button>
+      <Button type="text">확인</Button>
+      <Button type="icon" icon={<CloseOutline />} />
+      <Button type="primary">확인</Button>
+      <Modal open={modalOpen}>1111</Modal>
     </Flex>
   );
 };

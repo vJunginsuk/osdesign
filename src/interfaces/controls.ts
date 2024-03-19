@@ -3,9 +3,9 @@ export type inputSize = 'small' | 'medium' | 'large';
 
 export interface buttonProps {
   onClick?: () => void;
-  label?: string | React.ReactNode;
+  children?: React.ReactNode;
   type?: inputType | string;
-  icon?: any;
+  icon?: JSX.Element;
   size?: inputSize | string;
   disabled?: boolean;
   danger?: boolean;

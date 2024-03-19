@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { buttonProps } from '../../interfaces/controls';
 
 const Button = (props: buttonProps) => {
-  const { onClick, label, type, disabled, size, danger, icon, style } = props;
+  const { onClick, children, type, disabled, size, danger, icon, style } = props;
   const classes = classNames(
     'os-btn',
     classNames,
@@ -20,7 +20,7 @@ const Button = (props: buttonProps) => {
   };
   return (
     <button className={classes} onClick={onClick} disabled={disabled} style={styles}>
-      {icon && <span className="os-btn-svg">{icon}</span>} {label}
+      {icon && <span className="os-btn-svg">{icon}</span>} {children}
     </button>
   );
 };
