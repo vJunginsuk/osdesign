@@ -72,6 +72,12 @@ $btn-text-bg__danger-hover: lighten($red, 45%);
 
 //#endregion button
 
+//#region modal
+$modal-mask-bg: rgba($black, 50%);
+$modal-wrap-bg: $white;
+$modal-header-bd: $gray-400;
+//#endregion modal
+
 //#region icon
 $icon-outline-stroke: $gray-800;
 //#endregion icon

@@ -1,8 +1,8 @@
 import React from 'react';
-import { iconProps } from '../../interfaces/controls';
+import { IIconProps } from '../../interfaces/props.interface';
 import classNames from 'classnames';
 
-const MinusOutline = (props: iconProps) => {
+const MinusOutline = (props: IIconProps) => {
   const { className, size, color } = props;
   const classes = classNames(className, 'os-icon-svg');
   return (

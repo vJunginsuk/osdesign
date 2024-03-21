@@ -11,6 +11,10 @@ const Common = () => {
   const onClickModalOpen = () => {
     setModalOpen(true);
   };
+  const onClickModalClose = () => {
+    setModalOpen(false);
+    confirm;
+  };
 
   return (
     <Flex align="center" justify="between" style={{ marginTop: '20px' }}>
@@ -19,7 +23,16 @@ const Common = () => {
       <Button type="text">확인</Button>
       <Button type="icon" icon={<CloseOutline />} />
       <Button type="primary">확인</Button>
-      <Modal open={modalOpen}>1111</Modal>
+      <Modal
+        title="Test Header"
+        open={modalOpen}
+        okText="OK"
+        cancelText="Cancel"
+        onCancel={onClickModalClose}
+        closeIcon={null}
+      >
+        123456
+      </Modal>
     </Flex>
   );
 };

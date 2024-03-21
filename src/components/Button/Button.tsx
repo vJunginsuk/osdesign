@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import { buttonProps } from '../../interfaces/controls';
+import { IButtonProps } from '../../interfaces/props.interface';
 
-const Button = (props: buttonProps) => {
+const Button = (props: IButtonProps) => {
   const { onClick, children, type, disabled, size, danger, icon, style } = props;
   const classes = classNames(
     'os-btn',

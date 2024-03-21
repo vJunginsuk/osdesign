@@ -1,8 +1,8 @@
 import classNames from 'classnames';
 import React from 'react';
-import { flexProps } from '../../interfaces/layouts';
+import { IFlexProps } from '../../interfaces/props.interface';
 
-const index = (props: flexProps) => {
+const index = (props: IFlexProps) => {
   const { children, style, vertical, wrap, className, align, justify, gap } = props;
   const classes = classNames('os-flex', vertical && 'os-flex-vertical', wrap && 'os-flex-wrap', className, {
     [`os-flex-align-${align}`]: align,

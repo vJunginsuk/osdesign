@@ -18,10 +18,15 @@ export const Basic: Story = {
     const onClickModalOpen = () => {
       setModalOpen(true);
     };
+    const onClickModalClose = () => {
+      setModalOpen(false);
+    };
     return (
       <>
-        <Button onClick={onClickModalOpen}>Click!!!!</Button>
-        <Modal open={modalOpen}>111</Modal>
+        <Button onClick={onClickModalOpen}>modal open</Button>
+        <Modal title="Modal header title" open={modalOpen} onClose={onClickModalClose} okText="확인" cancelText="취소">
+          111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+        </Modal>
       </>
     );
   },

@@ -8,6 +8,7 @@ export interface portalProps {
 
 const Portal = (props: portalProps) => {
   const { children, container } = props;
+
   if (!container) return null;
   return ReactDOM.createPortal(children, container);
 };
