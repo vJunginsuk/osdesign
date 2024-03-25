@@ -25,7 +25,6 @@ const Modal = (props: IModalProps) => {
     style,
     closeIcon,
     fullIcon,
-    type,
   } = props;
 
   // ## portlId 에 ID name 부여

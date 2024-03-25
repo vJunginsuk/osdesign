@@ -13,7 +13,6 @@ const Common = () => {
   };
   const onClickModalClose = () => {
     setModalOpen(false);
-    confirm;
   };
 
   return (
