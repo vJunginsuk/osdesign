@@ -30,7 +30,7 @@ const Common = () => {
         onCancel={onClickModalClose}
         closeIcon={null}
       >
-        123456
+        123456789
       </Modal>
     </Flex>
   );
