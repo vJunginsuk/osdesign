@@ -2,9 +2,9 @@ import React, { useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames';
 import Button from '../../components/Button/Button';
 import Portal from './Portal';
-import CloseOutline from '../../icons/CloseOutline/CloseOutline';
 import { IModalProps } from '../../interfaces/props.interface';
-import PlusOutline from '../../icons/PlusOutline/PlusOutline';
+import ModalHeader from '../components/ModalHeader';
+import ModalFooter from '../components/ModalFooter';
 
 const Modal = (props: IModalProps) => {
   const {
@@ -62,35 +62,19 @@ const Modal = (props: IModalProps) => {
         <div className="os-modal-mask" onClick={onBakClose ? onBakClose : undefined} />
         <div className={classesWrap} style={styles}>
           {/* header */}
-          <header>
-            <h3>{title}</h3>
-            {/* <Button type="icon" icon={<CloseOutline />} onClick={onClose} /> */}
-            <div className="os-modal-icon">
-              {fullIcon === true && <Button type="icon" icon={<PlusOutline />} onClick={onClose} />}
-              {closeIcon !== null && <Button type="icon" icon={<CloseOutline />} onClick={onClose} />}
-            </div>
-          </header>
+          <ModalHeader title={title} closeIcon={closeIcon} onClose={onClose} fullIcon={fullIcon} />
           {/* contents */}
           <section>{children}</section>
           {/* footer */}
           {footer !== null && (
-            <footer>
-              {okText && (
-                <Button size="small" type="primary" onClick={onOk}>
-                  {okText}
-                </Button>
-              )}
-              {cancelText && (
-                <Button size="small" onClick={onCancel}>
-                  {cancelText}
-                </Button>
-              )}
-              {deleteText && (
-                <Button size="small" type="primary" danger onClick={onDelete}>
-                  {deleteText}
-                </Button>
-              )}
-            </footer>
+            <ModalFooter
+              okText={okText}
+              cancelText={cancelText}
+              deleteText={deleteText}
+              onOk={onOk}
+              onCancel={onCancel}
+              onDelete={onDelete}
+            />
           )}
         </div>
       </div>

@@ -6,7 +6,7 @@ export type TJustifyType = 'start' | 'center' | 'end' | 'between' | 'around' | '
 export type TModalType = 'confirm' | 'error' | 'info' | 'warning';
 
 export interface IButtonProps {
-  onClick?: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children?: React.ReactNode;
   type?: TBtntType | string;
   icon?: JSX.Element;
@@ -23,15 +23,15 @@ export interface IIconProps {
 
 export interface IModalProps {
   open: boolean;
-  onClose?: () => void;
+  onClose?: React.MouseEventHandler<HTMLButtonElement>;
   title?: string;
   children?: React.ReactNode;
   okText?: string;
   cancelText?: string;
   deleteText?: string;
-  onOk?: () => void;
-  onCancel?: () => void;
-  onDelete?: () => void;
+  onOk?: React.MouseEventHandler<HTMLButtonElement>;
+  onCancel?: React.MouseEventHandler<HTMLButtonElement>;
+  onDelete?: React.MouseEventHandler<HTMLButtonElement>;
   onBakClose?: () => void;
   footer?: null;
   className?: string;
