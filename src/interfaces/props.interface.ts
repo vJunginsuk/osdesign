@@ -1,9 +1,15 @@
 export type TBtntType = 'outline' | 'primary' | 'text' | 'icon';
 export type TBtntSize = 'small' | 'medium' | 'large';
 export type TAlignType = 'start' | 'center' | 'end';
-export type TJustifyType = 'start' | 'center' | 'end' | 'between' | 'around' | 'evenly';
+export type TJustifyType =
+  | 'start'
+  | 'center'
+  | 'end'
+  | 'between'
+  | 'around'
+  | 'evenly';
 
-export type TModalType = 'confirm' | 'error' | 'info' | 'warning';
+export type TDialogType = 'confirm' | 'error' | 'info' | 'warning';
 
 export interface IButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -39,7 +45,7 @@ export interface IModalProps {
   style?: React.CSSProperties;
   closeIcon?: null;
   fullIcon?: boolean;
-  type?: TModalType;
+  footerClassName?: string;
 }
 
 export interface IFlexProps {
@@ -52,3 +58,29 @@ export interface IFlexProps {
   justify?: TJustifyType | string;
   style?: React.CSSProperties;
 }
+
+export interface IDialogFactory {
+  Component?: any;
+  onClosed?: () => void;
+  onAfterClosed?: () => void;
+  [x: string]: any;
+}
+
+export interface IConfirmProps {
+  type?: TDialogType;
+  isVisible?: boolean;
+  title?: string;
+  okText?: string;
+  cancelText?: string;
+  deleteText?: string;
+  message?: string;
+  afterClose?: () => void;
+  onClickClose?: React.MouseEventHandler<HTMLButtonElement>;
+  onOk?: React.MouseEventHandler<HTMLButtonElement>;
+  onDelete?: React.MouseEventHandler<HTMLButtonElement>;
+  onClosed?: () => void;
+}
+
+export interface IWarningConfig
+  extends IDialogFactory,
+    Pick<IConfirmProps, 'title' | 'message'> {}

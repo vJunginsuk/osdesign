@@ -20,6 +20,7 @@ $secondary: #69b805;
 // color
 $red: #c54646;
 $orange: #ed991c;
+$blue: #1677ff;
 
 // ###############################################################################################
 
@@ -76,6 +77,11 @@ $btn-text-bg__danger-hover: lighten($red, 45%);
 $modal-mask-bg: rgba($black, 50%);
 $modal-wrap-bg: $white;
 $modal-header-bd: $gray-400;
+// dialog icon color
+$dialog-confirm: $blue;
+$dialog-info: $blue;
+$dialog-warning: $orange;
+$dialog-error: $red;
 //#endregion modal
 
 //#region icon
