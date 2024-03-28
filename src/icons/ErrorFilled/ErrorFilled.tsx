@@ -2,24 +2,24 @@ import React from 'react';
 import { IIconProps } from '../../interfaces/props.interface';
 import classNames from 'classnames';
 
-const CloseOutline = (props: IIconProps) => {
+const ErrorFilled = (props: IIconProps) => {
   const { className, size, color } = props;
   const classes = classNames(className, 'os-icon-svg');
   return (
     <svg
+      fill="none"
       width={size ? size : '16px'}
       viewBox="0 0 20 20"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={classes}
     >
       <path
-        d="M14.654 3.06a1.5 1.5 0 0 1 2.12 0l.165.165a1.5 1.5 0 0 1 0 2.121L5.346 16.94a1.5 1.5 0 0 1-2.12 0l-.165-.164a1.5 1.5 0 0 1 0-2.121L14.654 3.06z"
+        d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0z"
         className={color ? '' : 'os-icon-fill'}
         fill={color ? color : ''}
       />
       <path
-        d="M16.94 14.654a1.5 1.5 0 0 1 0 2.121l-.165.164a1.5 1.5 0 0 1-2.121 0L3.06 5.346a1.5 1.5 0 0 1 0-2.12l.164-.165a1.5 1.5 0 0 1 2.121 0L16.94 14.654z"
+        d="M13.694 13.694a1.045 1.045 0 0 0 0-1.478L11.478 10l2.216-2.216a1.045 1.045 0 0 0-1.478-1.478L10 8.522 7.784 6.306a1.045 1.045 0 1 0-1.478 1.478L8.522 10l-2.216 2.216a1.045 1.045 0 0 0 1.478 1.478L10 11.478l2.216 2.216c.408.408 1.07.408 1.478 0z"
         className={color ? '' : 'os-icon-fill'}
         fill={color ? color : ''}
       />
@@ -27,4 +27,4 @@ const CloseOutline = (props: IIconProps) => {
   );
 };
 
-export default CloseOutline;
+export default ErrorFilled;

@@ -13,6 +13,6 @@ type Story = StoryObj<typeof CloseOutline>;
 
 export const Icon: Story = {
   render: () => {
-    return <CloseOutline size="20px" />;
+    return <CloseOutline size="16px" />;
   },
 };
