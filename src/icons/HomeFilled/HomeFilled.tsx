@@ -2,7 +2,7 @@ import React from 'react';
 import { IIconProps } from '../../interfaces/props.interface';
 import classNames from 'classnames';
 
-const HomeOutline = (props: IIconProps) => {
+const HomeFilled = (props: IIconProps) => {
   const { className, size, color } = props;
   const classes = classNames(className, 'os-icon-svg');
   return (
@@ -22,4 +22,4 @@ const HomeOutline = (props: IIconProps) => {
   );
 };
 
-export default HomeOutline;
+export default HomeFilled;
