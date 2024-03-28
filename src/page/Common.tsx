@@ -28,6 +28,11 @@ const Common = () => {
       message: '비밀번호를 변경해주세요.',
       okText: '변경하기',
       cancelText: '다음에 변경하기',
+      onOk: () =>
+        success({
+          okText: '확인',
+          title: '비밀번호가 성공적으로 변경됐습니다.',
+        }),
     });
   };
   const onClickAlret = () => {
@@ -53,7 +58,6 @@ const Common = () => {
   };
   const onClickSuccess = () => {
     success({
-      okText: '확인',
       title: '비밀번호가 성공적으로 변경됐습니다.',
     });
   };

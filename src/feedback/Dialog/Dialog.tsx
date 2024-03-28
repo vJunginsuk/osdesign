@@ -10,6 +10,9 @@ import ModalHeader from '../components/ModalHeader';
 import ModalFooter from '../components/ModalFooter';
 import CloseOutline from '../../icons/CloseOutline/CloseOutline';
 import classNames from 'classnames';
+import InfoFilled from '../../icons/InfoFilled/InfoFilled';
+import ExclamationmarkFilled from '../../icons/ExclamationmarkFilled/ExclamationmarkFilled';
+import CheckFilled from '../../icons/CheckFilled/CheckFilled';
 
 //#region hook
 const useModal = (
@@ -133,7 +136,7 @@ const Confirm = ({
     });
     return (
       <div className={iconClasses}>
-        <CloseOutline />
+        <CheckFilled />
       </div>
     );
   },
@@ -208,7 +211,7 @@ export const Info = (config?: IAlertConfig): IConfirmProps => {
       });
       return (
         <div className={iconClasses}>
-          <CloseOutline />
+          <InfoFilled />
         </div>
       );
     },
@@ -227,7 +230,10 @@ export const Info = (config?: IAlertConfig): IConfirmProps => {
     ) => (
       <>
         <p>{contentMessage}</p>
-        <ModalFooter onOk={onOkContent} okText={okTextString} />
+        <ModalFooter
+          onOk={onOkContent}
+          okText={okTextString ? okTextString : 'OK'}
+        />
       </>
     ),
   };
@@ -245,7 +251,7 @@ export const Warning = (config?: IAlertConfig): IConfirmProps => {
       });
       return (
         <div className={iconClasses}>
-          <CloseOutline />
+          <ExclamationmarkFilled />
         </div>
       );
     },
@@ -260,10 +266,14 @@ export const Warning = (config?: IAlertConfig): IConfirmProps => {
       ) => {},
 
       contentMessage = '',
+      okTextString = '',
     ) => (
       <>
         <p>{contentMessage}</p>
-        <ModalFooter onOk={onOkContent} okText={'OK'} />
+        <ModalFooter
+          onOk={onOkContent}
+          okText={okTextString ? okTextString : 'OK'}
+        />
       </>
     ),
   };
@@ -296,10 +306,14 @@ export const Errorcomponent = (config?: IAlertConfig): IConfirmProps => {
       ) => {},
 
       contentMessage = '',
+      okTextString = '',
     ) => (
       <>
         <p>{contentMessage}</p>
-        <ModalFooter onOk={onOkContent} okText={'OK'} />
+        <ModalFooter
+          onOk={onOkContent}
+          okText={okTextString ? okTextString : 'OK'}
+        />
       </>
     ),
   };
@@ -317,7 +331,7 @@ export const SuccessComponent = (config?: IAlertConfig): IConfirmProps => {
       });
       return (
         <div className={iconClasses}>
-          <CloseOutline color="#ffffff" />
+          <CheckFilled />
         </div>
       );
     },
@@ -332,10 +346,14 @@ export const SuccessComponent = (config?: IAlertConfig): IConfirmProps => {
       ) => {},
 
       contentMessage = '',
+      okTextString = '',
     ) => (
       <>
         <p>{contentMessage}</p>
-        <ModalFooter onOk={onOkContent} okText={'OK'} />
+        <ModalFooter
+          onOk={onOkContent}
+          okText={okTextString ? okTextString : 'OK'}
+        />
       </>
     ),
   };
