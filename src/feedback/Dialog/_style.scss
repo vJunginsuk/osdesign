@@ -49,8 +49,14 @@
     &-error {
       background-color: var.$dialog-error;
     }
+    &-success {
+      background-color: var.$dialog-success;
+    }
     .os-icon-path {
       stroke: var.$white;
+    }
+    .os-icon-fill {
+      fill: var.$white;
     }
   }
 }

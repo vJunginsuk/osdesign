@@ -5,7 +5,13 @@ import Button from '../components/Button/Button';
 import CloseOutline from '../icons/CloseOutline/CloseOutline';
 import Modal from '../feedback/Modal/Modal';
 import Test from './Test';
-import { info, confirm } from '../feedback/Dialog/Dialog';
+import {
+  info,
+  confirm,
+  warning,
+  error,
+  success,
+} from '../feedback/Dialog/Dialog';
 
 const Common = () => {
   console.log();
@@ -18,8 +24,10 @@ const Common = () => {
   };
   const onClickDialogOpen = () => {
     confirm({
-      title: 'This is a notification message',
-      message: '확인하시겠습니까?',
+      title: '사용한 비밀번호가 3개월이 지났습니다.',
+      message: '비밀번호를 변경해주세요.',
+      okText: '변경하기',
+      cancelText: '다음에 변경하기',
     });
   };
   const onClickAlret = () => {
@@ -27,6 +35,26 @@ const Common = () => {
       title: 'Info',
       okText: '확인',
       message: '변경되었습니다.',
+    });
+  };
+  const onClickWarning = () => {
+    warning({
+      okText: '확인',
+      message: '비밀번호를 변경해 주세요.',
+    });
+  };
+
+  const onClickError = () => {
+    error({
+      okText: '확인',
+      title: '비밀번호가 틀렸습니다.',
+      message: '비밀번호를 변경해주세요.',
+    });
+  };
+  const onClickSuccess = () => {
+    success({
+      okText: '확인',
+      title: '비밀번호가 성공적으로 변경됐습니다.',
     });
   };
 
@@ -43,7 +71,15 @@ const Common = () => {
           Alart open
         </Button>
         <Button type="icon" icon={<CloseOutline />} />
-        <Button type="primary">확인</Button>
+        <Button type="primary" onClick={onClickWarning}>
+          Warning open
+        </Button>
+        <Button type="primary" onClick={onClickError}>
+          error open
+        </Button>
+        <Button type="primary" onClick={onClickSuccess}>
+          Success open
+        </Button>
         <Modal
           title="Test Header"
           open={modalOpen}
