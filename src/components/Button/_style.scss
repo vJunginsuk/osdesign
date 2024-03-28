@@ -25,6 +25,10 @@
           @include mix.fade-in;
           stroke: var.$btn-outline-font__hover;
         }
+        .os-icon-fill {
+          @include mix.fade-in;
+          fill: var.$btn-outline-font__hover;
+        }
       }
     }
   }
@@ -35,6 +39,9 @@
       > .os-btn-svg {
         .os-icon-path {
           stroke: var.$btn-outline-font__active;
+        }
+        .os-icon-fill {
+          fill: var.$btn-outline-font__active;
         }
       }
     }
@@ -91,6 +98,7 @@
     > .os-btn-svg {
       .os-icon-path {
         stroke: var.$btn-outline-font__disabled !important;
+        fill: var.$btn-outline-font__disabled !important;
       }
     }
   }
@@ -107,6 +115,9 @@
     .os-icon-path {
       stroke: var.$btn-outline-font;
     }
+    .os-icon-fill {
+      fill: var.$btn-outline-font;
+    }
   }
 }
 //#endregion outline
@@ -119,6 +130,9 @@
   > .os-btn-svg {
     .os-icon-path {
       stroke: var.$btn-primary-font;
+    }
+    .os-icon-fill {
+      fill: var.$btn-primary-font;
     }
   }
   &:hover {
@@ -139,6 +153,9 @@
     > .os-btn-svg {
       .os-icon-path {
         stroke: var.$btn-primary-font__disabled;
+      }
+      .os-icon-fill {
+        fill: var.$btn-primary-font__disabled;
       }
     }
   }
@@ -161,6 +178,9 @@
     .os-icon-path {
       stroke: var.$btn-text-font;
     }
+    .os-icon-fill {
+      fill: var.$btn-text-font;
+    }
   }
   &:hover {
     &:not(.os-btn-text-disabled, .os-btn-text-danger) {
@@ -169,6 +189,9 @@
       > .os-btn-svg {
         .os-icon-path {
           stroke: var.$btn-text-font__hover;
+        }
+        .os-icon-fill {
+          fill: var.$btn-text-font__hover;
         }
       }
     }
@@ -179,6 +202,9 @@
       > .os-btn-svg {
         .os-icon-path {
           stroke: var.$btn-text-font__active;
+        }
+        .os-icon-fill {
+          fill: var.$btn-text-font__active;
         }
       }
     }
@@ -192,6 +218,9 @@
     > .os-btn-svg {
       .os-icon-path {
         stroke: var.$btn-text-font__disabled !important;
+      }
+      .os-icon-fill {
+        fill: var.$btn-text-font__disabled !important;
       }
     }
   }
@@ -215,12 +244,18 @@
     .os-icon-path {
       stroke: var.$btn-text-font;
     }
+    .os-icon-fill {
+      fill: var.$btn-text-font;
+    }
   }
   &-disabled {
     cursor: not-allowed;
     > .os-btn-svg {
       .os-icon-path {
         stroke: var.$btn-text-font__disabled !important;
+      }
+      .os-icon-fill {
+        fill: var.$btn-text-font__disabled !important;
       }
     }
   }
