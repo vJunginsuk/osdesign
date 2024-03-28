@@ -14,7 +14,7 @@ const ExclamationmarkFilled = (props: IIconProps) => {
       className={classes}
     >
       <path
-        d="M9.185 15.193a.815.815 0 1 1 1.63 0 .815.815 0 0 1-1.63 0zM10.815 11.934a.815.815 0 1 1-1.63 0V7.045a.815.815 0 1 1 1.63 0v4.89z"
+        d="M9.709 15a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm0-2c.69 0 1.25-.56 1.25-1.25v-8.5a1.25 1.25 0 1 0-2.5 0v8.5c0 .69.56 1.25 1.25 1.25z"
         className={color ? '' : 'os-icon-fill'}
         fill={color ? color : ''}
       />

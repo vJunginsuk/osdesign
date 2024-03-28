@@ -14,7 +14,7 @@ const InfoFilled = (props: IIconProps) => {
       className={classes}
     >
       <path
-        d="M10.74 5.481a.815.815 0 1 1-1.629 0 .815.815 0 0 1 1.63 0zM9.111 8.74a.815.815 0 0 1 1.63 0v4.89a.815.815 0 0 1-1.63 0V8.74z"
+        d="M9.709 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm0 2c-.69 0-1.25.56-1.25 1.25v8.5a1.25 1.25 0 1 0 2.5 0v-8.5c0-.69-.56-1.25-1.25-1.25z"
         className={color ? '' : 'os-icon-fill'}
         fill={color ? color : ''}
       />
