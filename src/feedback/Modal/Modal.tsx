@@ -1,6 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import classNames from 'classnames';
-import Button from '../../components/Button/Button';
 import Portal from './Portal';
 import { IModalProps } from '../../interfaces/props.interface';
 import ModalHeader from '../components/ModalHeader';
@@ -25,6 +24,7 @@ const Modal = (props: IModalProps) => {
     style,
     closeIcon,
     fullIcon,
+    footerClassName,
   } = props;
 
   // ## portlId 에 ID name 부여
@@ -59,10 +59,18 @@ const Modal = (props: IModalProps) => {
   return (
     <Portal container={container}>
       <div className={open ? 'os-modal' : 'os-hide'}>
-        <div className="os-modal-mask" onClick={onBakClose ? onBakClose : undefined} />
+        <div
+          className="os-modal-mask"
+          onClick={onBakClose ? onBakClose : undefined}
+        />
         <div className={classesWrap} style={styles}>
           {/* header */}
-          <ModalHeader title={title} closeIcon={closeIcon} onClose={onClose} fullIcon={fullIcon} />
+          <ModalHeader
+            title={title}
+            closeIcon={closeIcon}
+            onClose={onClose}
+            fullIcon={fullIcon}
+          />
           {/* contents */}
           <section>{children}</section>
           {/* footer */}
@@ -74,6 +82,7 @@ const Modal = (props: IModalProps) => {
               onOk={onOk}
               onCancel={onCancel}
               onDelete={onDelete}
+              className={footerClassName}
             />
           )}
         </div>
