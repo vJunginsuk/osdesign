@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import ErrorFilled from './ErrorFilled';
+import CheckFilled from './CheckFilled';
 
-const meta: Meta<typeof ErrorFilled> = {
-  component: ErrorFilled,
+const meta: Meta<typeof CheckFilled> = {
+  component: CheckFilled,
   // Documentation 문서 생성
   tags: ['autodocs'],
 };
 
 export default meta;
-type Story = StoryObj<typeof ErrorFilled>;
+type Story = StoryObj<typeof CheckFilled>;
 
 export const Icon: Story = {
   render: () => {
-    return <ErrorFilled size="20px" />;
+    return <CheckFilled size="20px" />;
   },
 };
