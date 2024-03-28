@@ -9,7 +9,7 @@ export type TJustifyType =
   | 'around'
   | 'evenly';
 
-export type TDialogType = 'confirm' | 'error' | 'info' | 'warning';
+export type TDialogType = 'confirm' | 'error' | 'info' | 'warning' | 'success';
 
 export interface IButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -84,6 +84,7 @@ export interface IConfirmProps {
     onCancelContent?: IConfirmProps['onClickClose'],
     onOkContent?: IConfirmProps['onOk'],
     message?: string,
+    okTextString?: string,
   ) => any;
 }
 

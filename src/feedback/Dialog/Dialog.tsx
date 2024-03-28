@@ -148,12 +148,13 @@ const Confirm = ({
     ) => {},
 
     contentMessage = '',
+    okTextString = '',
   ) => (
     <>
       <p>{contentMessage}</p>
       <ModalFooter
         onOk={onOkContent}
-        okText={okText ? okText : 'OK'}
+        okText={okTextString ? okTextString : 'OK'}
         cancelText={cancelText ? cancelText : 'CANCEL'}
         onCancel={onCancelContent}
         deleteText={deleteText}
@@ -189,7 +190,7 @@ const Confirm = ({
       <div className="os-modal-wrap os-dialog-wrap">
         {icons(type)}
         <ModalHeader title={title} closeIcon={null} />
-        {contents(onOkHandler, onCancelHandler, message)}
+        {contents(onOkHandler, onCancelHandler, message, okText)}
       </div>
     </div>
   );
@@ -222,6 +223,43 @@ export const Info = (config?: IAlertConfig): IConfirmProps => {
       ) => {},
 
       contentMessage = '',
+      okTextString = '',
+    ) => (
+      <>
+        <p>{contentMessage}</p>
+        <ModalFooter onOk={onOkContent} okText={okTextString} />
+      </>
+    ),
+  };
+};
+//#endregion info
+
+//#region warning
+export const Warning = (config?: IAlertConfig): IConfirmProps => {
+  return {
+    ...config,
+    type: 'warning',
+    icons: (type) => {
+      const iconClasses = classNames('os-dialog-icon', {
+        [`os-dialog-icon-${type}`]: type,
+      });
+      return (
+        <div className={iconClasses}>
+          <CloseOutline />
+        </div>
+      );
+    },
+    contents: (
+      onOkContent = (
+        event:
+          | React.MouseEvent<HTMLButtonElement, MouseEvent>
+          | React.KeyboardEvent<HTMLButtonElement>,
+      ) => {},
+      onCancelContent = (
+        event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+      ) => {},
+
+      contentMessage = '',
     ) => (
       <>
         <p>{contentMessage}</p>
@@ -230,12 +268,93 @@ export const Info = (config?: IAlertConfig): IConfirmProps => {
     ),
   };
 };
-//#endregion info
+//#endregion warning
+
+//#region error
+export const Errorcomponent = (config?: IAlertConfig): IConfirmProps => {
+  return {
+    ...config,
+    type: 'error',
+    icons: (type) => {
+      const iconClasses = classNames('os-dialog-icon', {
+        [`os-dialog-icon-${type}`]: type,
+      });
+      return (
+        <div className={iconClasses}>
+          <CloseOutline color="#ffffff" />
+        </div>
+      );
+    },
+    contents: (
+      onOkContent = (
+        event:
+          | React.MouseEvent<HTMLButtonElement, MouseEvent>
+          | React.KeyboardEvent<HTMLButtonElement>,
+      ) => {},
+      onCancelContent = (
+        event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+      ) => {},
+
+      contentMessage = '',
+    ) => (
+      <>
+        <p>{contentMessage}</p>
+        <ModalFooter onOk={onOkContent} okText={'OK'} />
+      </>
+    ),
+  };
+};
+//#endregion error
+
+//#region error
+export const SuccessComponent = (config?: IAlertConfig): IConfirmProps => {
+  return {
+    ...config,
+    type: 'success',
+    icons: (type) => {
+      const iconClasses = classNames('os-dialog-icon', {
+        [`os-dialog-icon-${type}`]: type,
+      });
+      return (
+        <div className={iconClasses}>
+          <CloseOutline color="#ffffff" />
+        </div>
+      );
+    },
+    contents: (
+      onOkContent = (
+        event:
+          | React.MouseEvent<HTMLButtonElement, MouseEvent>
+          | React.KeyboardEvent<HTMLButtonElement>,
+      ) => {},
+      onCancelContent = (
+        event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+      ) => {},
+
+      contentMessage = '',
+    ) => (
+      <>
+        <p>{contentMessage}</p>
+        <ModalFooter onOk={onOkContent} okText={'OK'} />
+      </>
+    ),
+  };
+};
+//#endregion error
 
 export const confirm = (config?: IConfirmProps) =>
   factory({ ...config, Component: Confirm });
 
 export const info = (config?: IConfirmProps) =>
   factory({ ...Info(config), Component: Confirm });
+
+export const warning = (config?: IConfirmProps) =>
+  factory({ ...Warning(config), Component: Confirm });
+
+export const error = (config?: IConfirmProps) =>
+  factory({ ...Errorcomponent(config), Component: Confirm });
+
+export const success = (config?: IConfirmProps) =>
+  factory({ ...SuccessComponent(config), Component: Confirm });
 
 export default factory;
