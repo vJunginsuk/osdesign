@@ -5,7 +5,7 @@ import Button from '../components/Button/Button';
 import CloseOutline from '../icons/CloseOutline/CloseOutline';
 import Modal from '../feedback/Modal/Modal';
 import Test from './Test';
-import { confirm } from '../feedback/Dialog/Dialog';
+import { info, confirm } from '../feedback/Dialog/Dialog';
 
 const Common = () => {
   console.log();
@@ -22,15 +22,26 @@ const Common = () => {
       message: '확인하시겠습니까?',
     });
   };
+  const onClickAlret = () => {
+    info({
+      title: 'Info',
+      okText: '확인',
+      message: '변경되었습니다.',
+    });
+  };
 
   return (
     <>
       <Flex align="center" justify="between" style={{ marginTop: '20px' }}>
-        <Button type="primary" size="medium" onClick={onClickModalOpen} />
-        <Button type="outline" onClick={onClickDialogOpen}>
-          Confirm
+        <Button type="primary" size="medium" onClick={onClickModalOpen}>
+          modal open
         </Button>
-        <Button type="text">확인</Button>
+        <Button type="outline" onClick={onClickDialogOpen}>
+          Confirm open
+        </Button>
+        <Button type="text" onClick={onClickAlret}>
+          Alart open
+        </Button>
         <Button type="icon" icon={<CloseOutline />} />
         <Button type="primary">확인</Button>
         <Modal

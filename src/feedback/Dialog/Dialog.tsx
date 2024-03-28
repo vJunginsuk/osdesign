@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import {
+  IAlertConfig,
   IConfirmProps,
   IDialogFactory,
-  IWarningConfig,
 } from '../../interfaces/props.interface';
 import ModalHeader from '../components/ModalHeader';
 import ModalFooter from '../components/ModalFooter';
@@ -101,7 +101,6 @@ export const factory = ({ Component, ...config }: IDialogFactory) => {
     };
 
     render(config);
-    console.log('config', config);
   };
   render(currentConfig);
   destroyFns.push(close);
@@ -128,13 +127,47 @@ const Confirm = ({
   cancelText,
   deleteText,
   message = '',
+  icons = (type) => {
+    const iconClasses = classNames('os-dialog-icon', {
+      [`os-dialog-icon-${type}`]: type,
+    });
+    return (
+      <div className={iconClasses}>
+        <CloseOutline />
+      </div>
+    );
+  },
+  contents = (
+    onOkContent = (
+      event:
+        | React.MouseEvent<HTMLButtonElement, MouseEvent>
+        | React.KeyboardEvent<HTMLButtonElement>,
+    ) => {},
+    onCancelContent = (
+      event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    ) => {},
+
+    contentMessage = '',
+  ) => (
+    <>
+      <p>{contentMessage}</p>
+      <ModalFooter
+        onOk={onOkContent}
+        okText={okText ? okText : 'OK'}
+        cancelText={cancelText ? cancelText : 'CANCEL'}
+        onCancel={onCancelContent}
+        deleteText={deleteText}
+        onDelete={onDelete}
+      />
+    </>
+  ),
 }: IConfirmProps) => {
   const [isOpen, setIsOpen] = useModal(isVisible);
   const onClosedHandler = () => {
     onClosed();
     afterClose();
   };
-  const onClickCloseHandler = (
+  const onCancelHandler = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
   ) => {
     onClickClose(event);
@@ -150,34 +183,59 @@ const Confirm = ({
     onClosedHandler();
   };
 
-  const iconClasses = classNames('os-dialog-icon', {
-    [`os-dialog-icon-${type}`]: type,
-  });
-
   return (
     <div className={isOpen ? 'os-modal' : 'os-hide'}>
       <div className="os-modal-mask os-dialog-mask" />
       <div className="os-modal-wrap os-dialog-wrap">
-        <div className={iconClasses}>
-          <CloseOutline />
-        </div>
+        {icons(type)}
         <ModalHeader title={title} closeIcon={null} />
-        <p>{message}</p>
-        <ModalFooter
-          onOk={onOkHandler}
-          okText={okText ? okText : 'OK'}
-          cancelText={cancelText ? cancelText : 'CANCEL'}
-          onCancel={onClickCloseHandler}
-          deleteText={deleteText}
-          onDelete={onDelete}
-        />
+        {contents(onOkHandler, onCancelHandler, message)}
       </div>
     </div>
   );
 };
 //#endregion confirm
 
+//#region info
+export const Info = (config?: IAlertConfig): IConfirmProps => {
+  return {
+    ...config,
+    type: 'info',
+    icons: (type) => {
+      const iconClasses = classNames('os-dialog-icon', {
+        [`os-dialog-icon-${type}`]: type,
+      });
+      return (
+        <div className={iconClasses}>
+          <CloseOutline />
+        </div>
+      );
+    },
+    contents: (
+      onOkContent = (
+        event:
+          | React.MouseEvent<HTMLButtonElement, MouseEvent>
+          | React.KeyboardEvent<HTMLButtonElement>,
+      ) => {},
+      onCancelContent = (
+        event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+      ) => {},
+
+      contentMessage = '',
+    ) => (
+      <>
+        <p>{contentMessage}</p>
+        <ModalFooter onOk={onOkContent} okText={'OK'} />
+      </>
+    ),
+  };
+};
+//#endregion info
+
 export const confirm = (config?: IConfirmProps) =>
   factory({ ...config, Component: Confirm });
+
+export const info = (config?: IConfirmProps) =>
+  factory({ ...Info(config), Component: Confirm });
 
 export default factory;

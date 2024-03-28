@@ -79,8 +79,14 @@ export interface IConfirmProps {
   onOk?: React.MouseEventHandler<HTMLButtonElement>;
   onDelete?: React.MouseEventHandler<HTMLButtonElement>;
   onClosed?: () => void;
+  icons?: (type?: TDialogType) => React.ReactElement;
+  contents?: (
+    onCancelContent?: IConfirmProps['onClickClose'],
+    onOkContent?: IConfirmProps['onOk'],
+    message?: string,
+  ) => any;
 }
 
-export interface IWarningConfig
+export interface IAlertConfig
   extends IDialogFactory,
-    Pick<IConfirmProps, 'title' | 'message'> {}
+    Pick<IConfirmProps, 'title' | 'message' | 'okText'> {}
