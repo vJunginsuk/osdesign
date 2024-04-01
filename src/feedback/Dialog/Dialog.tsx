@@ -127,7 +127,7 @@ export const Confirm = ({
   onOk: onClickOk = () => {},
   isVisible = true,
   title = '',
-  onClosed = () => {},
+  onClose = () => {},
   okText,
   onDelete,
   cancelText,
@@ -171,7 +171,7 @@ export const Confirm = ({
 }: IConfirmProps) => {
   const [isOpen, setIsOpen] = useModal(isVisible);
   const onClosedHandler = () => {
-    onClosed();
+    onClose();
     afterClose();
   };
   const onCancelHandler = (
