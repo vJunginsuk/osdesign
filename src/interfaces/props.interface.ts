@@ -78,7 +78,7 @@ export interface IConfirmProps {
   onClickClose?: React.MouseEventHandler<HTMLButtonElement>;
   onOk?: React.MouseEventHandler<HTMLButtonElement>;
   onDelete?: React.MouseEventHandler<HTMLButtonElement>;
-  onClosed?: () => void;
+  onClose?: () => void;
   icons?: (type?: TDialogType) => React.ReactElement;
   contents?: (
     onCancelContent?: IConfirmProps['onClickClose'],

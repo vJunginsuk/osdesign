@@ -4,6 +4,7 @@ import Portal from './Portal';
 import { IModalProps } from '../../interfaces/props.interface';
 import ModalHeader from '../components/ModalHeader';
 import ModalFooter from '../components/ModalFooter';
+import { handelHideHtml, handleShowHtml } from '../../common/func';
 
 const Modal = (props: IModalProps) => {
   const {
@@ -40,12 +41,14 @@ const Modal = (props: IModalProps) => {
     document.body.appendChild(newContainer);
     if (open) {
       setContainer(newContainer);
+      handelHideHtml();
       return () => {
         document.getElementById(portalId)?.remove();
       };
     } else {
       setContainer(null);
       document.getElementById(portalId)?.remove();
+      handleShowHtml();
     }
   }, [portalId, open]);
 

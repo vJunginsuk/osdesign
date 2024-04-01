@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Flex from '../components/Flex/Flex';
+import Flex from '../controls/Flex/Flex';
 import '../assets/styles/index.scss';
-import Button from '../components/Button/Button';
+import Button from '../controls/Button/Button';
 import CloseOutline from '../icons/CloseOutline/CloseOutline';
 import Modal from '../feedback/Modal/Modal';
 import Test from './Test';
@@ -28,6 +28,17 @@ const Common = () => {
       message: '비밀번호를 변경해주세요.',
       okText: '변경하기',
       cancelText: '다음에 변경하기',
+      onOk: () =>
+        success({
+          okText: '확인',
+          title: '비밀번호가 성공적으로 변경됐습니다.',
+        }),
+    });
+  };
+  const onmodalOnOk = () => {
+    warning({
+      okText: '확인',
+      message: '비밀번호를 변경해 주세요.',
     });
   };
   const onClickAlret = () => {
@@ -53,7 +64,6 @@ const Common = () => {
   };
   const onClickSuccess = () => {
     success({
-      okText: '확인',
       title: '비밀번호가 성공적으로 변경됐습니다.',
     });
   };
@@ -84,6 +94,7 @@ const Common = () => {
           title="Test Header"
           open={modalOpen}
           okText="OK"
+          onOk={onmodalOnOk}
           cancelText="Cancel"
           onCancel={onClickModalClose}
           closeIcon={null}
@@ -91,6 +102,147 @@ const Common = () => {
           12345
         </Modal>
       </Flex>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <Button type="primary" size="medium" onClick={onClickModalOpen}>
+        modal open
+      </Button>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
+      <p>123456</p>
       <Test />
     </>
   );

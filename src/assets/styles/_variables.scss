@@ -77,7 +77,8 @@ $btn-text-bg__danger-hover: lighten($red, 45%);
 //#region modal
 $modal-mask-bg: rgba($black, 50%);
 $modal-wrap-bg: $white;
-$modal-header-bd: $gray-400;
+$modal-header-bd: $gray-300;
+$modal-footer-bd: $gray-300;
 // dialog icon color
 $dialog-confirm: $blue;
 $dialog-info: $blue;
