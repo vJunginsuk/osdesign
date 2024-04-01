@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../components/Button/Button';
+import Button from '../../controls/Button/Button';
 import PlusOutline from '../../icons/PlusOutline/PlusOutline';
 import CloseOutline from '../../icons/CloseOutline/CloseOutline';
 
@@ -18,8 +18,12 @@ const ModalHeader = (props: IModalHeaderProps) => {
       {/* <Button type="icon" icon={<CloseOutline />} onClick={onClose} /> */}
       <div className="os-modal-icon">
         <div className="os-modal-icon">
-          {fullIcon === true && <Button type="icon" icon={<PlusOutline />} onClick={onClose} />}
-          {closeIcon !== null && <Button type="icon" icon={<CloseOutline />} onClick={onClose} />}
+          {fullIcon === true && (
+            <Button type="icon" icon={<PlusOutline />} onClick={onClose} />
+          )}
+          {closeIcon !== null && (
+            <Button type="icon" icon={<CloseOutline />} onClick={onClose} />
+          )}
         </div>
       </div>
     </header>

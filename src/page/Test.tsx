@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../components/Button/Button';
+import Button from '../controls/Button/Button';
 import EditOutline from '../icons/EditOutline/EditOutline';
 import HomeOutline from '../icons/HomeOutline/HomeOutline';
 import HomeFilled from '../icons/HomeFilled/HomeFilled';

@@ -1,0 +1,21 @@
+// 보간법 예시
+// 변수에 조부모 선택자(.Article)을 담아 주고,
+// 보간법을 이용해 자바스크립트 쓰듯이 변수를 대입해 주면 끝
+
+.Article {
+  $Article: &; // $Article: .Article
+
+  &__thumb {
+    // .Article__thumb
+    width: 100%;
+    height: 18.2rem;
+    position: relative;
+    border-radius: 1.6rem;
+    overflow: hidden;
+
+    #{$Article}:hover &-img {
+      //.Article:hover Article__thumb-img
+      transform: scale(1.15);
+    }
+  }
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../components/Button/Button';
+import Button from '../../controls/Button/Button';
 
 export interface IModalFooter {
   className?: string;
@@ -12,7 +12,15 @@ export interface IModalFooter {
 }
 
 const ModalFooter = (props: IModalFooter) => {
-  const { className, okText, cancelText, deleteText, onOk, onCancel, onDelete } = props;
+  const {
+    className,
+    okText,
+    cancelText,
+    deleteText,
+    onOk,
+    onCancel,
+    onDelete,
+  } = props;
   return (
     <footer className={className}>
       {okText && (

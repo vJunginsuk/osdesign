@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-
 import {
   IAlertConfig,
   IConfirmProps,
   IDialogFactory,
 } from '../../interfaces/props.interface';
+
 import ModalHeader from '../components/ModalHeader';
 import ModalFooter from '../components/ModalFooter';
 import CloseOutline from '../../icons/CloseOutline/CloseOutline';
@@ -13,6 +13,7 @@ import classNames from 'classnames';
 import InfoFilled from '../../icons/InfoFilled/InfoFilled';
 import ExclamationmarkFilled from '../../icons/ExclamationmarkFilled/ExclamationmarkFilled';
 import CheckFilled from '../../icons/CheckFilled/CheckFilled';
+import { handelHideHtml, handleShowHtml } from '../../common/func';
 
 //#region hook
 const useModal = (
@@ -40,9 +41,9 @@ export const destroyAll = () => {
 
 //#region factory
 export const factory = ({ Component, ...config }: IDialogFactory) => {
-  const portalId = 'portal-root';
+  const dialogId = 'dialog-root';
   const div = document.createElement('div');
-  div.setAttribute('id', portalId);
+  div.setAttribute('id', dialogId);
   const root = createRoot(div);
   document.body.appendChild(div);
 
@@ -58,6 +59,7 @@ export const factory = ({ Component, ...config }: IDialogFactory) => {
   };
 
   const destroy = ({ ...config }: IDialogFactory) => {
+    handleShowHtml();
     if (div.parentNode) {
       div.parentNode.removeChild(div);
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
@@ -76,6 +78,7 @@ export const factory = ({ Component, ...config }: IDialogFactory) => {
   };
 
   const render = ({ ...config }: IDialogFactory) => {
+    handelHideHtml();
     setTimeout(() => {
       return Component
         ? root.render(<Component {...config} />)
@@ -96,7 +99,7 @@ export const factory = ({ Component, ...config }: IDialogFactory) => {
       afterClose: () => {
         if (typeof currentConfig.onAfterClose === 'function') {
           currentConfig.onAfterClose();
-          document.getElementById(portalId)?.remove();
+          document.getElementById(dialogId)?.remove();
         }
         // eslint-disable-next-line @typescript-eslint/no-use-before-define
         destroy(config);
@@ -117,7 +120,7 @@ export const factory = ({ Component, ...config }: IDialogFactory) => {
 
 //#region confirm
 
-const Confirm = ({
+export const Confirm = ({
   type = 'confirm',
   afterClose = () => {},
   onClickClose = () => {},
@@ -320,7 +323,7 @@ export const Errorcomponent = (config?: IAlertConfig): IConfirmProps => {
 };
 //#endregion error
 
-//#region error
+//#region success
 export const SuccessComponent = (config?: IAlertConfig): IConfirmProps => {
   return {
     ...config,
@@ -358,7 +361,7 @@ export const SuccessComponent = (config?: IAlertConfig): IConfirmProps => {
     ),
   };
 };
-//#endregion error
+//#endregion success
 
 export const confirm = (config?: IConfirmProps) =>
   factory({ ...config, Component: Confirm });
