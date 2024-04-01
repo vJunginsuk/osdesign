@@ -4,7 +4,7 @@ import Flex from '../Flex/Flex';
 import Button from './Button';
 import MinusOutline from '../../icons/MinusOutline/MinusOutline';
 import PlusOutline from '../../icons/PlusOutline/PlusOutline';
-import EditOutline from '../../icons/EditOutline/EditOutline';
+import EditOutline from '../../icons/EditOutlined/EditOutlined';
 import CloseOutline from '../../icons/CloseOutline/CloseOutline';
 
 const meta: Meta<typeof Button> = {
@@ -36,19 +36,44 @@ export const Type: Story = {
         </div>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
-            <input type="radio" id="type1" name="typeGroup" defaultChecked value="outline" onChange={onChange} />
+            <input
+              type="radio"
+              id="type1"
+              name="typeGroup"
+              defaultChecked
+              value="outline"
+              onChange={onChange}
+            />
             <label htmlFor="type1">outline</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type2" name="typeGroup" value="primary" onChange={onChange} />
+            <input
+              type="radio"
+              id="type2"
+              name="typeGroup"
+              value="primary"
+              onChange={onChange}
+            />
             <label htmlFor="type2">primary</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type3" name="typeGroup" value="text" onChange={onChange} />
+            <input
+              type="radio"
+              id="type3"
+              name="typeGroup"
+              value="text"
+              onChange={onChange}
+            />
             <label htmlFor="type3">text</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type3" name="typeGroup" value="icon" onChange={onChange} />
+            <input
+              type="radio"
+              id="type3"
+              name="typeGroup"
+              value="icon"
+              onChange={onChange}
+            />
             <label htmlFor="type3">icon</label>
           </Flex>
         </Flex>
@@ -74,15 +99,34 @@ export const Size: Story = {
         </div>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
-            <input type="radio" id="size1" name="sizeGroup" defaultChecked value="small" onChange={onChange} />
+            <input
+              type="radio"
+              id="size1"
+              name="sizeGroup"
+              defaultChecked
+              value="small"
+              onChange={onChange}
+            />
             <label htmlFor="size1">small</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="size2" name="sizeGroup" value="medium" onChange={onChange} />
+            <input
+              type="radio"
+              id="size2"
+              name="sizeGroup"
+              value="medium"
+              onChange={onChange}
+            />
             <label htmlFor="size2">medium</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="size3" name="sizeGroup" value="large" onChange={onChange} />
+            <input
+              type="radio"
+              id="size3"
+              name="sizeGroup"
+              value="large"
+              onChange={onChange}
+            />
             <label htmlFor="size3">large</label>
           </Flex>
         </Flex>
@@ -106,15 +150,34 @@ export const Danger: Story = {
         </div>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
-            <input type="radio" id="Danger1" name="typeGroup2" defaultChecked value="outline" onChange={onChange} />
+            <input
+              type="radio"
+              id="Danger1"
+              name="typeGroup2"
+              defaultChecked
+              value="outline"
+              onChange={onChange}
+            />
             <label htmlFor="Danger1">outline</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="Danger2" name="typeGroup2" value="primary" onChange={onChange} />
+            <input
+              type="radio"
+              id="Danger2"
+              name="typeGroup2"
+              value="primary"
+              onChange={onChange}
+            />
             <label htmlFor="Danger2">primary</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="Danger3" name="typeGroup2" value="text" onChange={onChange} />
+            <input
+              type="radio"
+              id="Danger3"
+              name="typeGroup2"
+              value="text"
+              onChange={onChange}
+            />
             <label htmlFor="Danger3">text</label>
           </Flex>
         </Flex>
