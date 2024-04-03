@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import Flex from '../controls/Flex/Flex';
+import React, { useContext, useState } from 'react';
+import Flex from '../layout/Flex/Flex';
 import '../assets/styles/index.scss';
 import Button from '../controls/Button/Button';
 import CloseOutline from '../icons/CloseOutline/CloseOutline';
@@ -12,10 +12,14 @@ import {
   error,
   success,
 } from '../feedback/Dialog/Dialog';
+import { contextProps } from '../interfaces/props.interface';
+import { ThemeContext } from '../stores/context';
 
 const Common = () => {
-  console.log();
-  const [modalOpen, setModalOpen] = useState(false);
+  const { theme, onClickTheme, onChangeTheme } =
+    useContext<contextProps>(ThemeContext);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+
   const onClickModalOpen = () => {
     setModalOpen(true);
   };
@@ -67,10 +71,32 @@ const Common = () => {
       title: '비밀번호가 성공적으로 변경됐습니다.',
     });
   };
+  console.log('theme', theme);
 
   return (
-    <>
-      <Flex align="center" justify="between" style={{ marginTop: '20px' }}>
+    <div className={theme === 'dark' ? 'dark-theme' : 'light-theme'}>
+      <Flex>
+        <input
+          type="radio"
+          value="light"
+          name="themeGrp"
+          onChange={onChangeTheme}
+          id="light"
+        />
+        <label htmlFor="light">light</label>
+        <input
+          type="radio"
+          value="dark"
+          name="themeGrp"
+          onChange={onChangeTheme}
+          id="dark"
+        />
+        <label htmlFor="dark">dark</label>
+      </Flex>
+      <Button type="primary" onClick={onClickTheme}>
+        theme
+      </Button>
+      <Flex align="center" justify="between">
         <Button type="primary" size="medium" onClick={onClickModalOpen}>
           modal open
         </Button>
@@ -102,149 +128,9 @@ const Common = () => {
           12345
         </Modal>
       </Flex>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <Button type="primary" size="medium" onClick={onClickModalOpen}>
-        modal open
-      </Button>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
-      <p>123456</p>
+
       <Test />
-    </>
+    </div>
   );
 };
 

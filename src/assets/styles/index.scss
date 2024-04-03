@@ -2,9 +2,11 @@
 @use 'mixin' as mix;
 
 @import 'common';
+@import 'theme';
 
 @import '../../controls/Button/style';
-@import '../../controls/Flex/style';
+@import '../../controls/Button/theme';
+@import '../../layout/Flex/style';
 @import '../../icons/style';
 @import '../../feedback/Modal/style';
 @import '../../feedback/Dialog/style';

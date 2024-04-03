@@ -2,9 +2,9 @@
 .os-btn {
   border-width: 1px;
   border-style: solid;
-  border-color: var.$btn-outline-border;
-  background-color: var.$btn-outline-bg;
-  color: var.$btn-outline-font;
+  border-color: var(--btn-outline-border);
+  background-color: var(--btn-outline-bg);
+  color: var(--btn-outline-font);
   font-size: 12px;
   box-sizing: border-box;
   padding: 0 12px;
@@ -17,7 +17,12 @@
   @include mix.fade-in;
 
   &:hover {
-    &:not(.os-btn-outline-disabled, .os-btn-outline-danger, .os-btn-primary, .os-btn-text) {
+    &:not(
+        .os-btn-outline-disabled,
+        .os-btn-outline-danger,
+        .os-btn-primary,
+        .os-btn-text
+      ) {
       border-color: var.$btn-outline-border__hover;
       color: var.$btn-outline-font__hover;
       > .os-btn-svg {
@@ -32,7 +37,12 @@
       }
     }
   }
-  &:not(.os-btn-outline-disabled, .os-btn-outline-danger, .os-btn-primary, .os-btn-text) {
+  &:not(
+      .os-btn-outline-disabled,
+      .os-btn-outline-danger,
+      .os-btn-primary,
+      .os-btn-text
+    ) {
     &:active {
       border-color: var.$btn-outline-border__active;
       color: var.$btn-outline-font__active;
