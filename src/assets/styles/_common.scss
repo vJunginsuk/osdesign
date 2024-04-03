@@ -23,7 +23,8 @@ span,
 b,
 strong,
 input {
-  color: var.$font-color;
+  color: var(--os-font);
+  line-height: 1.5;
 }
 html,
 body,
