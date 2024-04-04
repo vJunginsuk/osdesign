@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import { ThemeContext } from '../../stores/context';
 import { themeProps } from '../../interfaces/props.interface';
