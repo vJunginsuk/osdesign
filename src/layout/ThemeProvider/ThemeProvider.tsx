@@ -1,10 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { ThemeContext } from '../../stores/context';
 import { themeProps } from '../../interfaces/props.interface';
 
 const ThemeProvider = (props: themeProps) => {
-  const { children } = props;
+  const { children, color } = props;
   const localTheme: any = localStorage.getItem('THEME');
   const [theme, setTheme] = useState<string>(
     localTheme !== null ? localTheme : 'light',
@@ -25,9 +25,26 @@ const ThemeProvider = (props: themeProps) => {
     localStorage.setItem('THEME', event.target.value);
   };
 
+  // useEffect(() => {
+  //   if (color !== undefined) {
+  //     localStorage.setItem('PRIMARY_COLOR', color);
+  //     document.documentElement.style.setProperty('--primary-color', color);
+  //   } else {
+  //     return;
+  //   }
+  // }, [color]);
+  // if (!CSS.supports('--my-color', 'initial')) {
+  //   (window as any).CSS.registerProperty({
+  //     name: '--my-color',
+  //     syntax: '<color>',
+  //     initialValue: color,
+  //     inherits: false,
+  //   });
+  // }
+
   return (
     <ThemeContext.Provider value={{ theme, onClickTheme, onChangeTheme }}>
-      {children}
+      <div color={color}>{children}</div>
     </ThemeContext.Provider>
   );
 };

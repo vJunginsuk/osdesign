@@ -34,7 +34,8 @@ $gray-100: #000 !default;
 
 // point
 $primary: #0291f9;
-$primary-light: lighten($primary, 10%);
+// $primary: var(--my-color);
+$primary-light: rgba($primary, 0.8);
 $primary-dark: darken($primary, 8%);
 
 $secondary: #69b805;

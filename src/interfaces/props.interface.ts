@@ -99,4 +99,5 @@ export interface contextProps {
 }
 export interface themeProps {
   children: React.ReactNode;
+  color?: string;
 }

@@ -71,7 +71,6 @@ const Common = () => {
       title: '비밀번호가 성공적으로 변경됐습니다.',
     });
   };
-  console.log('theme', theme);
 
   return (
     <div className={theme === 'dark' ? 'dark-theme' : 'light-theme'}>

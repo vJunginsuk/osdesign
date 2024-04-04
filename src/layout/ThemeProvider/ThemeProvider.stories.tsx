@@ -45,14 +45,16 @@ export const Basic: Story = {
               checked={theme === 'dark'}
             />
             <label htmlFor="dark">dark</label>
-            <Button onClick={onClickTheme}>Theme Change</Button>
+            <Button type="primary" onClick={onClickTheme}>
+              Theme Change
+            </Button>
           </Flex>
 
           <div>
             <h2>Theme</h2>
             <p>Theme는 "light" 와 "dark" 입니다.</p>
             <p>
-              최상의 component를 ThemeProvider로 감싸고, 그 아래 children에
+              최상위 component를 ThemeProvider로 감싸고, 그 아래 children에
               theme와 event를 적용해 주세요.
             </p>
             <p>
@@ -68,7 +70,7 @@ export const Basic: Story = {
       );
     };
     return (
-      <ThemeProvider>
+      <ThemeProvider color="rgb(200,15,160)">
         <Contents />
       </ThemeProvider>
     );
