@@ -16,7 +16,7 @@ import { contextProps } from '../interfaces/props.interface';
 import { ThemeContext } from '../stores/context';
 
 const ModalTest = () => {
-  const { theme, onClickTheme, onChangeTheme } =
+  const { onClickTheme, onChangeTheme } =
     useContext<contextProps>(ThemeContext);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 

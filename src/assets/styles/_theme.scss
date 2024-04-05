@@ -14,7 +14,6 @@ $_dark-theme: (
   'os-border': var.$gray-012,
 );
 
-body,
 .os-app {
   @each $name, $color in $_light-theme {
     --#{$name}: #{$color};

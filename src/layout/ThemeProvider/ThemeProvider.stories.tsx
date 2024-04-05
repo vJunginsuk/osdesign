@@ -70,7 +70,7 @@ export const Basic: Story = {
       );
     };
     return (
-      <ThemeProvider color="rgb(200,15,160)">
+      <ThemeProvider>
         <Contents />
       </ThemeProvider>
     );
