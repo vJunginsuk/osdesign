@@ -83,7 +83,7 @@ $_dark-theme: (
   'btn-text-bg__danger-hover': lighten(var.$red, 45%)
 );
 
-.light-theme {
+.os-app {
   @each $name, $color in $_light-theme {
     --#{$name}: #{$color};
   }

@@ -73,7 +73,7 @@ const ModalTest = () => {
   };
 
   return (
-    <div className={theme === 'dark' ? 'dark-theme' : 'light-theme'}>
+    <div>
       <Flex>
         <input
           type="radio"
