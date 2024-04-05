@@ -3,10 +3,12 @@ $_light-theme: (
   'layout-font': var.$gray-017,
   'os-font': var.$gray-016,
   'os-border': var.$gray-006,
+  // font color default
+  'font-color': var.$gray-015,
 );
 
 $_dark-theme: (
-  'layout-bg': var.$gray-016,
+  'layout-bg': var.$gray-017,
   'layout-font': var.$gray-003,
   'os-font': var.$gray-004,
   'os-border': var.$gray-012,

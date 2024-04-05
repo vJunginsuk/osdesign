@@ -5,7 +5,7 @@ import ThemeProvider from './layout/ThemeProvider/ThemeProvider';
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider color="#f00000">
+    <ThemeProvider>
       <div className="App os-app">
         <Common />
       </div>

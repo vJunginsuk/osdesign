@@ -101,3 +101,12 @@ export interface themeProps {
   children: React.ReactNode;
   color?: string;
 }
+
+export interface textFieldProps {
+  label?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
+  placeholder?: string;
+  className?: string;
+}

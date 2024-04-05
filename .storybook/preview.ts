@@ -1,9 +1,9 @@
-import type { Preview } from "@storybook/react";
-import "../src/assets/styles/index.scss";
+import type { Preview } from '@storybook/react';
+import '../src/assets/styles/index.scss';
 
 const preview: Preview = {
   parameters: {
-    actions: { argTypesRegex: "^on[A-Z].*" },
+    actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -25,12 +25,12 @@ const preview: Preview = {
 export const parameters = {
   a11y: {
     // the target DOM element
-    element: "#root",
+    element: '#root',
     // sets the execution mode for the addon
     manual: false,
     config: {
       rules: {
-        id: "color-contrast",
+        id: 'color-contrast',
         enabled: false,
       },
     },

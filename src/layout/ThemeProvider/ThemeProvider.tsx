@@ -44,7 +44,8 @@ const ThemeProvider = (props: themeProps) => {
 
   return (
     <ThemeContext.Provider value={{ theme, onClickTheme, onChangeTheme }}>
-      <div color={color}>{children}</div>
+      {/* <div color={color}>{children}</div> */}
+      {children}
     </ThemeContext.Provider>
   );
 };

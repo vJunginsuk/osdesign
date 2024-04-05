@@ -4,7 +4,8 @@
   margin: 0;
   padding: 0;
 }
-div {
+div,
+input {
   box-sizing: border-box;
 }
 h1,
@@ -53,4 +54,16 @@ h6 {
   margin-top: 32px;
   padding-top: 32px;
   border-top: 1px solid #cccccc;
+}
+
+// test
+:root,
+body,
+#root,
+.App {
+  height: 100%;
+}
+.test-layout {
+  background-color: var(--layout-bg);
+  height: 100%;
 }
