@@ -7,7 +7,7 @@ const PlusOutline = (props: IIconProps) => {
   const classes = classNames(className, 'os-icon-svg');
   return (
     <svg
-      width={size ? size : '12px'}
+      width={size ? size : '14px'}
       height={size ? size : '12px'}
       viewBox="0 0 20 20"
       fill="none"

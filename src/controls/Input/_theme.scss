@@ -1,0 +1,27 @@
+$_light-theme: (
+  'input-border': var.$gray-006,
+  'input-border_hover': var.$primary,
+  'input-border_active': var.$primary-dark,
+  'input-bg': transparent,
+  'input-font': var.$gray-015,
+  'input-font_placeholder': var.$gray-007,
+);
+
+$_dark-theme: (
+  'input-border': var.$gray-012,
+  'input-border_hover': var.$primary,
+  'input-border_active': var.$primary-dark,
+  'input-bg': transparent,
+  'input-font': var.$gray-007,
+  'input-font_placeholder': var.$gray-012,
+);
+body {
+  @each $name, $color in $_light-theme {
+    --#{$name}: #{$color};
+  }
+}
+.dark-theme {
+  @each $name, $color in $_dark-theme {
+    --#{$name}: #{$color};
+  }
+}

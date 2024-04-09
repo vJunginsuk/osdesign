@@ -1,5 +1,5 @@
 export type TBtntType = 'outline' | 'primary' | 'text' | 'icon';
-export type TBtntSize = 'small' | 'medium' | 'large';
+export type TInputSize = 'small' | 'medium' | 'large';
 export type TAlignType = 'start' | 'center' | 'end';
 export type TJustifyType =
   | 'start'
@@ -16,7 +16,7 @@ export interface IButtonProps {
   children?: React.ReactNode;
   type?: TBtntType | string;
   icon?: JSX.Element;
-  size?: TBtntSize | string;
+  size?: TInputSize | string;
   disabled?: boolean;
   danger?: boolean;
   style?: React.CSSProperties;
@@ -109,4 +109,7 @@ export interface textFieldProps {
   disabled?: boolean;
   placeholder?: string;
   className?: string;
+  classNameWrap?: string;
+  size?: TInputSize;
+  row?: boolean;
 }
