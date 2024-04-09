@@ -4,7 +4,7 @@
   "version": "0.2.0",
   "license": "MIT",
   "main": "dist/index.js",
-  "repository": "https://github.com/vJunginsuk/osdesign",
+  "repository": "https://github.com/vJunginsuk/osdesign.git",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
