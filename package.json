@@ -3,7 +3,7 @@
   "description": "Storybook design systems tutorial",
   "version": "1.0.3",
   "license": "MIT",
-  "main": "dist/index.ts",
+  "main": "src/index.ts",
   "repository": "https://github.com/vJunginsuk/osdesign.git",
   "private": false,
   "dependencies": {
