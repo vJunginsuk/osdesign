@@ -50,52 +50,6 @@ $green: #00cf26;
 // font color default
 $font-color: $gray-900;
 
-//#region button
-// ### outline
-$btn-outline-bg: transparent;
-$btn-outline-bg__disabled: $gray-200;
-$btn-outline-border: $gray-500;
-$btn-outline-border__hover: $primary;
-$btn-outline-border__active: $primary-dark;
-$btn-outline-border__disabled: $gray-300;
-$btn-outline-font: $gray-900;
-$btn-outline-font__hover: $primary;
-$btn-outline-font__active: $primary-dark;
-$btn-outline-font__disabled: $gray-500;
-
-// ### primary
-$btn-primary-bg: $primary;
-$btn-primary-bg__hover: $primary-light;
-$btn-primary-bg__active: $primary-dark;
-$btn-primary-bg__disabled: $gray-400;
-$btn-primary-border: transparent;
-$btn-primary-font: $white;
-$btn-primary-font__disabled: $gray-200;
-
-// ### text
-$btn-text-bg: transparent;
-$btn-text-bg__hover: $gray-100;
-$btn-text-bg__disabled: $gray-200;
-$btn-text-border: transparent;
-$btn-text-font: $gray-900;
-$btn-text-font__hover: $primary;
-$btn-text-font__active: $primary-dark;
-$btn-text-font__disabled: $gray-500;
-
-// ### delete
-$btn-outline-bg__danger: lighten($red, 45%);
-$btn-outline-bg__danger-hover: lighten($red, 40%);
-$btn-outline-border__danger: $red;
-$btn-outline-font__danger: $red;
-
-$btn-primary-bg__danger: $red;
-$btn-primary-bg__danger-hover: darken($red, 8%);
-
-$btn-text-font__danger: $red;
-$btn-text-bg__danger-hover: lighten($red, 45%);
-
-//#endregion button
-
 //#region modal
 $modal-mask-bg: rgba($black, 50%);
 $modal-wrap-bg: $white;

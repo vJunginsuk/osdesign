@@ -1,10 +1,11 @@
 import React from 'react';
-import TextField from '../controls/TextField/TextField';
+import Input from '../controls/Input/Input';
 
 const InputTest = () => {
   return (
     <div>
-      <TextField label="label" />
+      <Input label="label" placeholder="please enter" />
+      <Input placeholder="please enter" row />
     </div>
   );
 };

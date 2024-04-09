@@ -1,7 +1,9 @@
 .os-icon {
+  // os-icon-path
   &-path {
     stroke: var.$primary;
   }
+  // os-icon-fill
   &-fill {
     fill: var.$primary;
   }

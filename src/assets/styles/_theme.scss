@@ -1,20 +1,18 @@
 $_light-theme: (
   'layout-bg': var.$gray-000,
-  'layout-font': var.$gray-017,
-  'os-font': var.$gray-016,
+  'layout-font': var.$gray-015,
+  'os-font': var.$gray-015,
   'os-border': var.$gray-006,
-  // font color default
-  'font-color': var.$gray-015,
 );
 
 $_dark-theme: (
   'layout-bg': var.$gray-017,
-  'layout-font': var.$gray-003,
-  'os-font': var.$gray-004,
+  'layout-font': var.$gray-007,
+  'os-font': var.$gray-007,
   'os-border': var.$gray-012,
 );
 
-.os-app {
+body {
   @each $name, $color in $_light-theme {
     --#{$name}: #{$color};
   }

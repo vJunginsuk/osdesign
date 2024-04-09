@@ -1,0 +1,75 @@
+.os-input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .os-input-label {
+    margin-bottom: 4px;
+  }
+
+  // os-input-row
+  &-row {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    .os-input-label {
+      min-width: 100px;
+    }
+  }
+  // os-input-small
+  &-small {
+    .os-input-label {
+      font-size: 12px;
+    }
+    .os-input-text {
+      height: 24px;
+      font-size: 12px;
+    }
+  }
+  // os-input-medium
+  &-medium {
+    .os-input-label {
+      font-size: 14px;
+    }
+    .os-input-text {
+      height: 28px;
+      font-size: 14px;
+    }
+  }
+  // os-input-large
+  &-large {
+    .os-input-label {
+      font-size: 16px;
+    }
+    .os-input-text {
+      height: 32px;
+      font-size: 16px;
+    }
+  }
+}
+
+.os-input-text {
+  border-width: 1px;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: var(--input-border);
+  outline: none;
+  background-color: var(--input-bg);
+  text-indent: 12px;
+  height: 24px;
+  font-size: 12px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  &::placeholder {
+    color: var(--input-font_placeholder);
+  }
+  &:hover {
+    border-color: var(--input-border_hover);
+  }
+  &:active {
+    border-color: var(--input-border_active);
+  }
+  &-label {
+    font-size: 12px;
+    margin-right: 12px;
+  }
+}

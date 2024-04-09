@@ -3,7 +3,7 @@ $_light-theme: (
   // ### outline
   'btn-outline-bg': transparent,
   'btn-outline-bg__disabled': var.$gray-004,
-  'btn-outline-border': var.$gray-008,
+  'btn-outline-border': var.$gray-007,
   'btn-outline-border__hover': var.$primary,
   'btn-outline-border__active': var.$primary-dark,
   'btn-outline-border__disabled': var.$gray-005,
@@ -82,8 +82,7 @@ $_dark-theme: (
   'btn-text-font__danger': var.$red,
   'btn-text-bg__danger-hover': lighten(var.$red, 45%)
 );
-
-.os-app {
+body {
   @each $name, $color in $_light-theme {
     --#{$name}: #{$color};
   }
