@@ -11,9 +11,31 @@ $gray-800: #666666;
 $gray-900: #3d3d3d;
 $black: #000;
 
+$gray-000: #fff !default;
+$gray-001: #f7f7f7 !default;
+$gray-002: #f5f5f5 !default;
+$gray-003: #f0f0f0 !default;
+$gray-004: #eeeeee !default;
+$gray-005: #e0e0e0 !default;
+$gray-006: #d9d9d9 !default;
+$gray-007: #cccccc !default;
+$gray-008: #b9b9b9 !default;
+$gray-009: #999999 !default;
+$gray-010: #888888 !default;
+$gray-011: #666666 !default;
+$gray-012: #5a5a5a !default;
+$gray-013: #555555 !default;
+$gray-014: #414141 !default;
+$gray-015: #3d3d3d !default;
+$gray-016: #303030 !default;
+$gray-017: #2a2b2b !default;
+$gray-018: #1a1a1a !default;
+$gray-100: #000 !default;
+
 // point
 $primary: #0291f9;
-$primary-light: lighten($primary, 10%);
+// $primary: var(--my-color);
+$primary-light: rgba($primary, 0.8);
 $primary-dark: darken($primary, 8%);
 
 $secondary: #69b805;

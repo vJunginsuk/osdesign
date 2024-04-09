@@ -1,0 +1,95 @@
+$_light-theme: (
+  //#region button
+  // ### outline
+  'btn-outline-bg': transparent,
+  'btn-outline-bg__disabled': var.$gray-004,
+  'btn-outline-border': var.$gray-008,
+  'btn-outline-border__hover': var.$primary,
+  'btn-outline-border__active': var.$primary-dark,
+  'btn-outline-border__disabled': var.$gray-005,
+  'btn-outline-font': var.$gray-015,
+  'btn-outline-font__hover': var.$primary,
+  'btn-outline-font__active': var.$primary-dark,
+  'btn-outline-font__disabled': var.$gray-007,
+
+  // ### primary
+  'btn-primary-bg': var.$primary,
+  'btn-primary-bg__hover': var.$primary-light,
+  'btn-primary-bg__active': var.$primary-dark,
+  'btn-primary-border': transparent,
+  'btn-primary-font': var.$gray-000,
+
+  // ### text
+  'btn-text-bg': transparent,
+  'btn-text-bg__hover': var.$gray-002,
+  'btn-text-bg__disabled': var.$gray-004,
+  'btn-text-border': transparent,
+  'btn-text-font': var.$gray-015,
+  'btn-text-font__hover': var.$primary,
+  'btn-text-font__active': var.$primary-dark,
+  'btn-text-font__disabled': var.$gray-007,
+
+  // ### delete
+  'btn-outline-bg__danger': rgba(var.$red, 15%),
+  'btn-outline-bg__danger-hover': rgba(var.$red, 25%),
+  'btn-outline-border__danger': var.$red,
+  'btn-outline-font__danger': var.$red,
+
+  'btn-primary-bg__danger': var.$red,
+  'btn-primary-bg__danger-hover': darken(var.$red, 8%),
+  'btn-text-font__danger': var.$red,
+  'btn-text-bg__danger-hover': lighten(var.$red, 45%),
+  //#endregion button
+);
+
+$_dark-theme: (
+  // ### outline
+  'btn-outline-bg': transparent,
+  'btn-outline-bg__disabled': var.$gray-015,
+  'btn-outline-border': var.$gray-012,
+  'btn-outline-border__hover': var.$primary,
+  'btn-outline-border__active': var.$primary-dark,
+  'btn-outline-border__disabled': var.$gray-012,
+  'btn-outline-font': var.$gray-007,
+  'btn-outline-font__hover': var.$primary,
+  'btn-outline-font__active': var.$primary-dark,
+  'btn-outline-font__disabled': var.$gray-012,
+  // ### primary
+  'btn-primary-bg': var.$primary,
+  'btn-primary-bg__hover': var.$primary-light,
+  'btn-primary-bg__active': var.$primary-dark,
+  'btn-primary-border': transparent,
+  'btn-primary-font': var.$gray-000,
+
+  // ### text
+  'btn-text-bg': transparent,
+  'btn-text-bg__hover': var.$gray-016,
+  'btn-text-bg__disabled': var.$gray-015,
+  'btn-text-border': transparent,
+  'btn-text-font': var.$gray-007,
+  'btn-text-font__hover': var.$primary,
+  'btn-text-font__active': var.$primary-dark,
+  'btn-text-font__disabled': var.$gray-012,
+
+  // ### delete
+  'btn-outline-bg__danger': rgba(var.$red, 20%),
+  'btn-outline-bg__danger-hover': rgba(var.$red, 30%),
+  'btn-outline-border__danger': var.$red,
+  'btn-outline-font__danger': var.$red,
+
+  'btn-primary-bg__danger': var.$red,
+  'btn-primary-bg__danger-hover': darken(var.$red, 8%),
+  'btn-text-font__danger': var.$red,
+  'btn-text-bg__danger-hover': lighten(var.$red, 45%)
+);
+
+.os-app {
+  @each $name, $color in $_light-theme {
+    --#{$name}: #{$color};
+  }
+}
+.dark-theme {
+  @each $name, $color in $_dark-theme {
+    --#{$name}: #{$color};
+  }
+}

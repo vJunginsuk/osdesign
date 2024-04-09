@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import Flex from '../Flex/Flex';
+import Flex from '../../layout/Flex/Flex';
 import Button from './Button';
 import MinusOutline from '../../icons/MinusOutline/MinusOutline';
 import PlusOutline from '../../icons/PlusOutline/PlusOutline';

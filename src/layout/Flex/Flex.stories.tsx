@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import Flex from './Flex';
-import Button from '../Button/Button';
+import Button from '../../controls/Button/Button';
 
 const meta: Meta<typeof Flex> = {
   component: Flex,
@@ -42,7 +42,12 @@ export const Vertical: Story = {
         <div>
           <Flex gap="20px" align="center" className="story-box">
             <Flex gap="4px">
-              <input type="checkbox" id="type2" value="vertical" onChange={onChange} />
+              <input
+                type="checkbox"
+                id="type2"
+                value="vertical"
+                onChange={onChange}
+              />
               <label htmlFor="type2">vertical</label>
             </Flex>
           </Flex>
@@ -72,15 +77,34 @@ export const Aligncontent: Story = {
         </Flex>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
-            <input type="radio" id="type1" name="alignGroup" defaultChecked value="start" onChange={onChange} />
+            <input
+              type="radio"
+              id="type1"
+              name="alignGroup"
+              defaultChecked
+              value="start"
+              onChange={onChange}
+            />
             <label htmlFor="type1">start</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type2" name="alignGroup" value="center" onChange={onChange} />
+            <input
+              type="radio"
+              id="type2"
+              name="alignGroup"
+              value="center"
+              onChange={onChange}
+            />
             <label htmlFor="type2">center</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type3" name="alignGroup" value="end" onChange={onChange} />
+            <input
+              type="radio"
+              id="type3"
+              name="alignGroup"
+              value="end"
+              onChange={onChange}
+            />
             <label htmlFor="type3">end</label>
           </Flex>
         </Flex>
@@ -105,27 +129,64 @@ export const Justifycontent: Story = {
         </Flex>
         <Flex gap="20px" align="center" className="story-box">
           <Flex gap="4px">
-            <input type="radio" id="type1" name="justifyGroup" defaultChecked value="start" onChange={onChange} />
+            <input
+              type="radio"
+              id="type1"
+              name="justifyGroup"
+              defaultChecked
+              value="start"
+              onChange={onChange}
+            />
             <label htmlFor="type1">start</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type2" name="justifyGroup" value="center" onChange={onChange} />
+            <input
+              type="radio"
+              id="type2"
+              name="justifyGroup"
+              value="center"
+              onChange={onChange}
+            />
             <label htmlFor="type2">center</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type3" name="justifyGroup" value="end" onChange={onChange} />
+            <input
+              type="radio"
+              id="type3"
+              name="justifyGroup"
+              value="end"
+              onChange={onChange}
+            />
             <label htmlFor="type3">end</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type3" name="justifyGroup" value="between" onChange={onChange} />
+            <input
+              type="radio"
+              id="type3"
+              name="justifyGroup"
+              value="between"
+              onChange={onChange}
+            />
             <label htmlFor="type3">between</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type3" name="justifyGroup" value="around" onChange={onChange} />
+            <input
+              type="radio"
+              id="type3"
+              name="justifyGroup"
+              value="around"
+              onChange={onChange}
+            />
             <label htmlFor="type3">around</label>
           </Flex>
           <Flex gap="4px">
-            <input type="radio" id="type3" name="justifyGroup" value="evenly" onChange={onChange} />
+            <input
+              type="radio"
+              id="type3"
+              name="justifyGroup"
+              value="evenly"
+              onChange={onChange}
+            />
             <label htmlFor="type3">evenly</label>
           </Flex>
         </Flex>

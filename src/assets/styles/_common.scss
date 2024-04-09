@@ -1,8 +1,11 @@
-html {
+:root {
   box-sizing: border-box;
   font-size: 12px;
+  margin: 0;
+  padding: 0;
 }
-div {
+div,
+input {
   box-sizing: border-box;
 }
 h1,
@@ -21,8 +24,11 @@ span,
 b,
 strong,
 input {
-  color: var.$font-color;
+  color: var(--os-font);
+  line-height: 1.5;
 }
+
+body,
 ul,
 li,
 p,
@@ -48,4 +54,16 @@ h6 {
   margin-top: 32px;
   padding-top: 32px;
   border-top: 1px solid #cccccc;
+}
+
+// test
+:root,
+body,
+#root,
+.App {
+  height: 100%;
+}
+.test-layout {
+  background-color: var(--layout-bg);
+  height: 100%;
 }

@@ -2,9 +2,9 @@
 .os-btn {
   border-width: 1px;
   border-style: solid;
-  border-color: var.$btn-outline-border;
-  background-color: var.$btn-outline-bg;
-  color: var.$btn-outline-font;
+  border-color: var(--btn-outline-border);
+  background-color: var(--btn-outline-bg);
+  color: var(--btn-outline-font);
   font-size: 12px;
   box-sizing: border-box;
   padding: 0 12px;
@@ -17,31 +17,41 @@
   @include mix.fade-in;
 
   &:hover {
-    &:not(.os-btn-outline-disabled, .os-btn-outline-danger, .os-btn-primary, .os-btn-text) {
-      border-color: var.$btn-outline-border__hover;
-      color: var.$btn-outline-font__hover;
+    &:not(
+        .os-btn-outline-disabled,
+        .os-btn-outline-danger,
+        .os-btn-primary,
+        .os-btn-text
+      ) {
+      border-color: var(--btn-outline-border__hover);
+      color: var(--btn-outline-font__hover);
       > .os-btn-svg {
         .os-icon-path {
           @include mix.fade-in;
-          stroke: var.$btn-outline-font__hover;
+          stroke: var(--btn-outline-font__hover);
         }
         .os-icon-fill {
           @include mix.fade-in;
-          fill: var.$btn-outline-font__hover;
+          fill: var(--btn-outline-font__hover);
         }
       }
     }
   }
-  &:not(.os-btn-outline-disabled, .os-btn-outline-danger, .os-btn-primary, .os-btn-text) {
+  &:not(
+      .os-btn-outline-disabled,
+      .os-btn-outline-danger,
+      .os-btn-primary,
+      .os-btn-text
+    ) {
     &:active {
-      border-color: var.$btn-outline-border__active;
-      color: var.$btn-outline-font__active;
+      border-color: var(--btn-outline-border__active);
+      color: var(--btn-outline-font__active);
       > .os-btn-svg {
         .os-icon-path {
-          stroke: var.$btn-outline-font__active;
+          stroke: var(--btn-outline-font__active);
         }
         .os-icon-fill {
-          fill: var.$btn-outline-font__active;
+          fill: var(--btn-outline-font__active);
         }
       }
     }
@@ -91,32 +101,32 @@
 .os-btn-outline {
   // os-btn-outline-disabled
   &-disabled {
-    background-color: var.$btn-outline-bg__disabled !important;
-    border-color: var.$btn-outline-border__disabled !important;
-    color: var.$btn-outline-font__disabled !important;
+    background-color: var(--btn-outline-bg__disabled);
+    border-color: var(--btn-outline-border__disabled);
+    color: var(--btn-outline-font__disabled);
     cursor: not-allowed;
     > .os-btn-svg {
       .os-icon-path {
-        stroke: var.$btn-outline-font__disabled !important;
-        fill: var.$btn-outline-font__disabled !important;
+        stroke: var(--btn-outline-font__disabled);
+        fill: var(--btn-outline-font__disabled);
       }
     }
   }
   // os-btn-outline-danger
   &-danger {
-    background-color: var.$btn-outline-bg__danger;
-    border-color: var.$btn-outline-border__danger;
-    color: var.$btn-outline-font__danger;
+    background-color: var(--btn-outline-bg__danger);
+    border-color: var(--btn-outline-border__danger);
+    color: var(--btn-outline-font__danger);
     &:hover {
-      background-color: var.$btn-outline-bg__danger-hover;
+      background-color: var(--btn-outline-bg__danger-hover);
     }
   }
   > .os-btn-svg {
     .os-icon-path {
-      stroke: var.$btn-outline-font;
+      stroke: var(--btn-outline-font);
     }
     .os-icon-fill {
-      fill: var.$btn-outline-font;
+      fill: var(--btn-outline-font);
     }
   }
 }
@@ -124,46 +134,45 @@
 
 //#region primary
 .os-btn-primary {
-  background-color: var.$btn-primary-bg;
-  border-color: var.$btn-primary-border;
-  color: var.$btn-primary-font;
+  background-color: var(--btn-primary-bg);
+  border-color: var(--btn-primary-border);
+  color: var(--btn-primary-font);
   > .os-btn-svg {
     .os-icon-path {
-      stroke: var.$btn-primary-font;
+      stroke: var(--btn-primary-font);
     }
     .os-icon-fill {
-      fill: var.$btn-primary-font;
+      fill: var(--btn-primary-font);
     }
   }
   &:hover {
     &:not(.os-btn-primary-disabled, .os-btn-primary-danger) {
-      background-color: var.$btn-primary-bg__hover;
+      background-color: var(--btn-primary-bg__hover);
     }
   }
   &:active {
     &:not(.os-btn-primary-disabled, .os-btn-primary-danger) {
-      background-color: var.$btn-primary-bg__active;
+      background-color: var(--btn-primary-bg__active);
     }
   }
   // os-btn-primary-disabled
   &-disabled {
-    background-color: var.$btn-primary-bg__disabled !important;
-    color: var.$btn-primary-font__disabled !important;
+    opacity: 0.4;
     cursor: not-allowed;
-    > .os-btn-svg {
-      .os-icon-path {
-        stroke: var.$btn-primary-font__disabled;
-      }
-      .os-icon-fill {
-        fill: var.$btn-primary-font__disabled;
-      }
-    }
+    // > .os-btn-svg {
+    //   .os-icon-path {
+    //     stroke: var(--btn-primary-font__disabled;
+    //   }
+    //   .os-icon-fill {
+    //     fill: var(--btn-primary-font__disabled;
+    //   }
+    // }
   }
   // os-btn-primary-danger
   &-danger {
-    background-color: var.$btn-primary-bg__danger;
+    background-color: var(--btn-primary-bg__danger);
     &:hover {
-      background-color: var.$btn-primary-bg__danger-hover;
+      background-color: var(--btn-primary-bg__danger-hover);
     }
   }
 }
@@ -171,64 +180,64 @@
 
 //#region text
 .os-btn-text {
-  background-color: var.$btn-text-bg;
-  border-color: var.$btn-text-border;
-  color: var.$btn-text-font;
+  background-color: var(--btn-text-bg);
+  border-color: var(--btn-text-border);
+  color: var(--btn-text-font);
   > .os-btn-svg {
     .os-icon-path {
-      stroke: var.$btn-text-font;
+      stroke: var(--btn-text-font);
     }
     .os-icon-fill {
-      fill: var.$btn-text-font;
+      fill: var(--btn-text-font);
     }
   }
   &:hover {
     &:not(.os-btn-text-disabled, .os-btn-text-danger) {
-      color: var.$btn-text-font__hover;
-      background-color: var.$btn-text-bg__hover;
+      color: var(--btn-text-font__hover);
+      background-color: var(--btn-text-bg__hover);
       > .os-btn-svg {
         .os-icon-path {
-          stroke: var.$btn-text-font__hover;
+          stroke: var(--btn-text-font__hover);
         }
         .os-icon-fill {
-          fill: var.$btn-text-font__hover;
+          fill: var(--btn-text-font__hover);
         }
       }
     }
   }
   &:active {
     &:not(.os-btn-text-disabled, .os-btn-text-danger) {
-      color: var.$btn-text-font__active;
+      color: var(--btn-text-font__active);
       > .os-btn-svg {
         .os-icon-path {
-          stroke: var.$btn-text-font__active;
+          stroke: var(--btn-text-font__active);
         }
         .os-icon-fill {
-          fill: var.$btn-text-font__active;
+          fill: var(--btn-text-font__active);
         }
       }
     }
   }
   // os-btn-text-disabled
   &-disabled {
-    background-color: var.$btn-text-bg__disabled !important;
-    border-color: transparent !important;
-    color: var.$btn-text-font__disabled !important;
+    background-color: var(--btn-text-bg__disabled);
+    border-color: transparent;
+    color: var(--btn-text-font__disabled);
     cursor: not-allowed;
     > .os-btn-svg {
       .os-icon-path {
-        stroke: var.$btn-text-font__disabled !important;
+        stroke: var(--btn-text-font__disabled);
       }
       .os-icon-fill {
-        fill: var.$btn-text-font__disabled !important;
+        fill: var(--btn-text-font__disabled);
       }
     }
   }
   // os-btn-text-danger
   &-danger {
-    color: var.$btn-text-font__danger;
+    color: var(--btn-text-font__danger);
     &:hover {
-      background-color: var.$btn-text-bg__danger-hover;
+      background-color: var(--btn-text-bg__danger-hover);
     }
   }
 }
@@ -237,25 +246,25 @@
 //#region icon
 .os-btn-icon {
   font-size: 0px;
-  padding: 0 5px !important;
+  padding: 0 5px;
   border-width: 0;
   > .os-btn-svg {
     margin-right: 0px;
     .os-icon-path {
-      stroke: var.$btn-text-font;
+      stroke: var(--btn-text-font);
     }
     .os-icon-fill {
-      fill: var.$btn-text-font;
+      fill: var(--btn-text-font);
     }
   }
   &-disabled {
     cursor: not-allowed;
     > .os-btn-svg {
       .os-icon-path {
-        stroke: var.$btn-text-font__disabled !important;
+        stroke: var(--btn-text-font__disabled);
       }
       .os-icon-fill {
-        fill: var.$btn-text-font__disabled !important;
+        fill: var(--btn-text-font__disabled);
       }
     }
   }

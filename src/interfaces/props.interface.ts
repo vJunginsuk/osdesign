@@ -91,3 +91,22 @@ export interface IConfirmProps {
 export interface IAlertConfig
   extends IDialogFactory,
     Pick<IConfirmProps, 'title' | 'message' | 'okText'> {}
+
+export interface contextProps {
+  theme: string;
+  onClickTheme?: React.MouseEventHandler<HTMLButtonElement>;
+  onChangeTheme?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+export interface themeProps {
+  children: React.ReactNode;
+  color?: string;
+}
+
+export interface textFieldProps {
+  label?: string;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  disabled?: boolean;
+  placeholder?: string;
+  className?: string;
+}

@@ -1,12 +1,15 @@
 import React from 'react';
 
 import Common from './page/Common';
+import ThemeProvider from './layout/ThemeProvider/ThemeProvider';
 
 const App: React.FC = () => {
   return (
-    <div className="App os-app">
-      <Common />
-    </div>
+    <ThemeProvider>
+      <div className="App os-app">
+        <Common />
+      </div>
+    </ThemeProvider>
   );
 };
 
