@@ -1,7 +1,7 @@
 {
   "name": "@jis8268/osdesign",
   "description": "Storybook design systems tutorial",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "repository": "https://github.com/vJunginsuk/osdesign.git",
@@ -91,5 +91,6 @@
         }
       ]
     ]
-  }
+  },
+  "author": "junginsuk <jis2392@opensg.net>"
 }
