@@ -1,9 +1,9 @@
 {
   "name": "@jis8268/osdesign",
   "description": "Storybook design systems tutorial",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/index.ts",
   "repository": "https://github.com/vJunginsuk/osdesign.git",
   "private": false,
   "dependencies": {
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env BABEL_ENV=production babel src -d dist",
+    "build": "rm -rf dist && mkdir dist && babel src -d dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.24.1",
+    "@babel/preset-react": "^7.24.1",
     "@storybook/addon-a11y": "^7.6.17",
     "@storybook/addon-controls": "^7.6.17",
     "@storybook/addon-docs": "^7.6.17",
@@ -67,7 +68,10 @@
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "auto": "^11.1.6",
+    "babel-preset-react-app": "^10.0.1",
     "cross-env": "^7.0.3",
+    "esbuild": "^0.20.2",
+    "esbuild-css-modules-plugin": "^3.1.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
