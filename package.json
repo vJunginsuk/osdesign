@@ -1,9 +1,9 @@
 {
   "name": "@jis8268/osdesign",
-  "description": "Storybook design systems tutorial",
-  "version": "1.0.4",
+  "description": "OpenSG Design System",
+  "version": "1.0.5",
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "repository": "https://github.com/vJunginsuk/osdesign.git",
   "private": false,
   "dependencies": {
@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && mkdir dist && babel src -d dist --copy-files",
+    "build": "cross-env BABEL_ENV=production babel src -d dist",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "storybook dev -p 6006",
